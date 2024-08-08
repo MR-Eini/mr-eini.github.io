@@ -4,127 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Reza Eini - CV</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="profile">
-                <h1>Mohammad Reza Eini</h1>
-                <p>PhD Student - Environmental Engineering, Warsaw University of Life Sciences</p>
-                <p>Contact: <a href="mailto:mohammad_eini@sggw.edu.pl">mohammad_eini@sggw.edu.pl</a> | Phone: +48-883016889</p>
-                <p>Warsaw, Poland</p>
+            <h1 class="fade-in">Mohammad Reza Eini</h1>
+            <p class="fade-in">PhD Student - Environmental Engineering, Mining, and Energy</p>
+            <p class="fade-in">Warsaw University of Life Sciences - SGGW, Warsaw, Poland</p>
+            <div class="social-icons fade-in">
+                <a href="mailto:mohammad_eini@sggw.edu.pl"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/MREini/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=8WN65OIAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i></a>
             </div>
         </div>
     </header>
+    
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am passionate about developing innovative methodologies to assess the impacts of climate change on water resources. My research focuses on integrating novel modeling techniques with advanced observational data to create comprehensive models that can predict and mitigate adverse environmental effects.</p>
+    </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>Research Interests</h2>
-            <p>Developing innovative methodologies to assess the impacts of climate change on long-term surface and subsurface water storage, flood and drought occurrences, ecosystem health, and agricultural productivity. My research focuses on integrating novel modeling techniques with advanced observational data to create comprehensive models that can predict and mitigate adverse environmental effects. I aim to enhance the accuracy and efficiency of hydrological models by incorporating sustainable technologies and local practices. Additionally, I am interested in exploring the socio-economic implications of water resource management, working collaboratively with stakeholders to design and implement adaptive strategies that ensure water security and sustainability in the face of changing climatic conditions.</p>
+    <section id="research-interests" class="container">
+        <h2>Research Interests</h2>
+        <p>My research focuses on:</p>
+        <ul>
+            <li>Climate change impacts on water storage, flood, and drought occurrences</li>
+            <li>Enhancing the accuracy of hydrological models</li>
+            <li>Sustainable technologies in water resource management</li>
+        </ul>
+    </section>
+
+    <section id="technical-skills" class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <h3>Modeling</h3>
+                <p>SWAT, SWAT+, SWAT-MODFLOW, HEC-HMS, etc.</p>
+            </div>
+            <div>
+                <h3>Programming Languages</h3>
+                <p>R, MATLAB, Fortran, Python</p>
+            </div>
+            <div>
+                <h3>Applications</h3>
+                <p>ArcGIS, QGIS, ENVI, Remote Sensing, SWAT-CUP</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education" class="container">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <h3>PhD, Environmental Engineering</h3>
+                <p>Warsaw University of Life Sciences, 2020 - 2024</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <h3>M.Sc., Water Resources Engineering</h3>
+                <p>University of Tehran, 2015 - 2017</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <h3>B.S., Water Engineering</h3>
+                <p>Tabriz University, 2011 - 2015</p>
+            </div>
         </div>
     </section>
 
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <h3>PhD in Environmental Engineering</h3>
-                    <p>Warsaw University of Life Sciences – SGGW (2020 - 2024)</p>
-                    <p><strong>Thesis:</strong> Integrated modeling of hydrological and agricultural aspects of droughts in Odra river basin under a changing climate</p>
-                </li>
-                <li>
-                    <h3>M.Sc. in Water Resources Engineering</h3>
-                    <p>University of Tehran- College of Aburaihan (2015 - 2017)</p>
-                    <p><strong>Thesis:</strong> Development of comprehensive karstic watershed model to estimate and precise the components of the water balance</p>
-                </li>
-                <li>
-                    <h3>B.S in Water Engineering</h3>
-                    <p>Tabriz University- Agriculture Faculty (2011 - 2015)</p>
-                </li>
-            </ul>
-        </div>
+    <section id="publications" class="container">
+        <h2>Publications</h2>
+        <ul>
+            <li>Eini M. R., et al. (2024). Developing a remote-sensing-based indicator for peat soil vertical displacement. <em>Ecological Indicators</em>.</li>
+            <li>Delavar M., Eini M. R., et al. (2024). Assessing the Effectiveness of Water-Saving Plans. <em>Journal of Irrigation and Drainage Engineering</em>.</li>
+            <!-- More publications -->
+        </ul>
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <ul>
-                <li><strong>Modeling:</strong> SWAT, SWAT+, MODFLOW, HEC-HMS, LARS-WG, TerrSet, ANN, WANN, FUZZY, GEP, ANFIS, SVM, BN</li>
-                <li><strong>Computing Languages:</strong> R, MATLAB, Fortran, Python</li>
-                <li><strong>Applications:</strong> ArcGIS, QGIS, ENVI, SWAT-CUP, Surfer, MS Visual Studio</li>
-                <li><strong>Lab/Field Procedures:</strong> Wastewater Treatment Lab, College of Chemical Engineering, University of Tehran</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="fellowships">
-        <div class="container">
-            <h2>Fellowships</h2>
-            <ul>
-                <li>Research Institute for Geo-Hydrological Protection, National Research Council of Italy – IRPI-CNR Perugia, Italy (Spring and Summer 2022)</li>
-                <li>Potsdam Institute for Climate Impact Research – PIK, Potsdam, Germany (Spring and Summer 2023)</li>
-                <li>Helmholtz Centre for Environmental Research – UFZ, Leipzig, Germany (Fall 2023)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="publications">
-        <div class="container">
-            <h2>Publications</h2>
-            <ul>
-                <li><strong>Ghezelayagh P., Oleszczuk R., Stachowicz M., Eini M. R., et al.</strong> (2024). Developing a remote-sensing-based indicator for peat soil vertical displacement. <em>Ecological Indicators</em>, 166:112305.</li>
-                <li><strong>Delavar M., Raeisi L., Eini M. R., et al.</strong> (2024). Assessing the Effectiveness of Water-Saving Plans at the Farm and Basin Level. <em>Journal of Irrigation and Drainage Engineering</em>, 150(4):04024009.</li>
-                <!-- Add more publications as needed -->
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2>Current Projects</h2>
-            <ul>
-                <li>Dry Nexus: Pioneering Hybrid Modeling with AI, Process-based Models, and Satellites (DryAPS)</li>
-                <li>Integrated modeling of hydrological and agricultural aspects of droughts in Odra river basin under a changing climate (2020-2024)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="teaching">
-        <div class="container">
-            <h2>Teaching Experience</h2>
-            <ul>
-                <li><strong>Warsaw University of Life Sciences</strong> (2020-present): Climate Change and Water Resources (Master and Bachelor in Civil and Environmental Engineering)</li>
-                <li><strong>Ale-Taha University, Tehran, Iran</strong> (2017-2020): Advanced Engineering Hydrology, Mathematical Models in Hydrology, Groundwater Hydrology, Applied Hydrology (Master of Civil Engineering Water Resources)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="references">
-        <div class="container">
-            <h2>References</h2>
-            <ul>
-                <li>Dr. Luca Brocca, National Research Council of Italy, Email: <a href="mailto:luca.brocca@irpi.cnr.it">luca.brocca@irpi.cnr.it</a></li>
-                <li>Dr. Tobias Conradt, Potsdam Institute for Climate Impact Research, Email: <a href="mailto:conradt@pik-potsdam.de">conradt@pik-potsdam.de</a></li>
-                <li>Dr. Philip W. Gassman, Iowa State University, Email: <a href="mailto:pwgassma@iastate.edu">pwgassma@iastate.edu</a></li>
-            </ul>
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Feel free to reach out via email or connect with me on LinkedIn!</p>
+        <div class="contact-icons">
+            <a href="mailto:mohammad_eini@sggw.edu.pl"><i class="fas fa-envelope"></i> mohammad_eini@sggw.edu.pl</a>
+            <a href="https://www.linkedin.com/in/MREini/"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Mohammad Reza Eini</p>
-            <div class="social-links">
-                <a href="https://www.researchgate.net/profile/Mohammad_Reza_Eini" target="_blank">ResearchGate</a> |
-                <a href="https://scholar.google.com/citations?user=8WN65OIAAAAJ&hl=en" target="_blank">Google Scholar</a> |
-                <a href="https://www.linkedin.com/in/MREini/" target="_blank">LinkedIn</a> |
-                <a href="https://www.scopus.com/authid/detail.uri?authorId=57207841053" target="_blank">Scopus</a>
-            </div>
-        </div>
+        <p>&copy; 2024 Mohammad Reza Eini</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
