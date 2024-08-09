@@ -62,4 +62,25 @@ ul li h3 {
 }
 
 ul li p {
-    margin: 
+    margin: 0;
+    font-size: 1.1em;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        padding: 10px;
+    }
+}
