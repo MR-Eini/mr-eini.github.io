@@ -16,6 +16,9 @@ aside {
     background-color: #f4e1d2; /* Pastel peach */
     padding: 20px;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
 }
 
