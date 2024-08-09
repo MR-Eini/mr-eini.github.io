@@ -5,64 +5,44 @@ body {
     padding: 0;
     background-color: #f7f7f7;
     color: #333;
+    display: flex;
+    justify-content: center;
 }
 
 .main-container {
-    display: flex;
-    min-height: 100vh;
-}
-
-aside {
-    background-color: #4d4d4d; /* Dark Gray */
+    max-width: 900px;
+    width: 100%;
     padding: 20px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.sidebar h1 {
-    font-size: 2em;
-    color: #e0e0e0; /* Light Gray */
-    margin-bottom: 10px;
+.container {
+    margin-bottom: 40px;
 }
 
-.sidebar p {
-    font-size: 1.1em;
-    color: #bfbfbf; /* Medium Gray */
-    margin-bottom: 10px;
-}
-
-.sidebar hr {
-    border: 1px solid #808080; /* Gray */
-    margin: 20px 0;
-}
-
-.sidebar .social-links a {
-    color: #ffffff; /* White */
-    text-decoration: none;
-    font-size: 1.1em;
-    display: block;
-    margin: 10px 0;
-}
-
-.sidebar .social-links a:hover {
-    text-decoration: underline;
-}
-
-main {
-    flex: 1;
-    padding: 20px;
-    background-color: #f0f0f0; /* Very Light Gray */
-}
-
-main h2 {
-    font-size: 2em;
-    color: #333333; /* Dark Gray */
-    border-bottom: 2px solid #808080; /* Gray */
+h1, h2 {
+    color: #333333;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #808080;
     padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -71,10 +51,10 @@ ul {
 }
 
 ul li {
-    background: #ffffff;
+    background: #f0f0f0;
     margin: 10px 0;
     padding: 20px;
-    border-left: 5px solid #808080; /* Gray */
+    border-left: 5px solid #808080;
 }
 
 ul li h3 {
@@ -82,27 +62,4 @@ ul li h3 {
 }
 
 ul li p {
-    margin: 0;
-    font-size: 1.1em;
-}
-
-a {
-    color: #333333; /* Dark Gray */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-
-    aside {
-        width: 100%;
-        box-shadow: none;
-        margin-bottom: 20px;
-    }
-}
+    margin: 
