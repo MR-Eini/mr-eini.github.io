@@ -13,7 +13,7 @@ body {
 }
 
 aside {
-    background-color: #f4e1d2; /* Pastel peach */
+    background-color: #4d4d4d; /* Dark Gray */
     padding: 20px;
     width: 300px;
     display: flex;
@@ -24,23 +24,23 @@ aside {
 
 .sidebar h1 {
     font-size: 2em;
-    color: #34675C; /* Pastel teal */
+    color: #e0e0e0; /* Light Gray */
     margin-bottom: 10px;
 }
 
 .sidebar p {
     font-size: 1.1em;
-    color: #7D7D7D; /* Neutral dark gray */
+    color: #bfbfbf; /* Medium Gray */
     margin-bottom: 10px;
 }
 
 .sidebar hr {
-    border: 1px solid #c4c4c4;
+    border: 1px solid #808080; /* Gray */
     margin: 20px 0;
 }
 
 .sidebar .social-links a {
-    color: #34675C;
+    color: #ffffff; /* White */
     text-decoration: none;
     font-size: 1.1em;
     display: block;
@@ -54,13 +54,13 @@ aside {
 main {
     flex: 1;
     padding: 20px;
-    background-color: #eef1f5; /* Pastel light blue */
+    background-color: #f0f0f0; /* Very Light Gray */
 }
 
 main h2 {
     font-size: 2em;
-    color: #34675C;
-    border-bottom: 2px solid #B3C100; /* Pastel lime green */
+    color: #333333; /* Dark Gray */
+    border-bottom: 2px solid #808080; /* Gray */
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
@@ -74,7 +74,7 @@ ul li {
     background: #ffffff;
     margin: 10px 0;
     padding: 20px;
-    border-left: 5px solid #B3C100; /* Pastel lime green */
+    border-left: 5px solid #808080; /* Gray */
 }
 
 ul li h3 {
@@ -87,10 +87,22 @@ ul li p {
 }
 
 a {
-    color: #34675C;
+    color: #333333; /* Dark Gray */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        box-shadow: none;
+        margin-bottom: 20px;
+    }
 }
