@@ -59,7 +59,7 @@ header {
 header h1 {
     margin: 0; /* Remove margin from the header title */
     font-size: 1.3em; /* Font size for the main title in the header */
-    color: #ffffff; /* Gold color for the title */
+    color: #fff; /* White color for the title */
 }
 
 header p {
