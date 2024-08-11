@@ -199,6 +199,7 @@ a:hover {
 }
 
 #publications ol li {
+   font-size: 0.75em; /* Font size for publications */
     margin: 6px 0;
     padding: 10px;
     border-left: 4px solid #808080;
