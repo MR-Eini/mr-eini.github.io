@@ -1,34 +1,35 @@
 /* General Styling */
 body {
-    font-family: 'Roboto', sans-serif; /* Set the font for the entire webpage */
-    line-height: 1.4; /* Line height for better readability */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    background-color: #f7f7f7; /* Light background color */
-    color: #333; /* Dark gray text color */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content horizontally */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
 }
 
 /* Container with two columns */
 .container {
     display: flex;
-    max-width: 1200px; /* Adjust width as needed */
+    max-width: 1200px;
     margin: 20px auto;
 }
 
 /* Left Column Styling */
 .left-column {
-    width: 25%; /* Adjust width as needed */
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-right: 2px solid #ccc; /* Optional: Adds a separator between columns */
+    width: 25%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ccc;
 }
 
 .left-column h2 {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .left-column ul {
@@ -38,285 +39,294 @@ body {
 
 .left-column ul li {
     font-size: 0.9em;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    padding: 5px 0;
 }
 
 /* Main Content Styling */
 .main-content {
-    width: 75%; /* Adjust width as needed */
-    padding: 10px;
+    width: 75%;
+    padding: 20px;
     background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Header and Navigation */
 header {
-    background-color: #333; /* Dark background color for the header */
-    color: #fff; /* White text color for the header */
-    padding: 10px; /* Padding around the header content */
-    text-align: center; /* Center-align text in the header */
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
 }
 
 header h1 {
-    margin: 0; /* Remove margin from the header title */
-    font-size: 1.3em; /* Font size for the main title in the header */
-    color: #ffffff; /* Gold color for the title */
+    margin: 0;
+    font-size: 1.8em;
+    color: #FFD700; /* Gold color for the title */
 }
 
 header p {
-    margin: 2px 0; /* Small margins for subtext in the header */
-    font-size: 0.8em; /* Smaller font size for subtext */
+    margin: 5px 0;
+    font-size: 1em;
 }
 
 .download-cv {
-    margin-top: 8px; /* Space above the download button */
-    padding: 5px 10px; /* Padding inside the button */
-    background-color: #007BFF; /* Blue background color for the button */
-    color: #fff; /* White text color */
-    text-decoration: none; /* Remove underline from the link */
-    border-radius: 4px; /* Rounded corners for the button */
-    font-size: 0.8em; /* Font size for the button text */
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1em;
 }
 
 .download-cv:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 /* Navbar Styling */
 .navbar {
-    background-color: #333; /* Dark background color for the navbar */
-    overflow: hidden; /* Ensure content stays inside the navbar */
-    position: sticky; /* Make navbar sticky at the top */
-    top: 0; /* Position navbar at the very top */
-    z-index: 1000; /* Ensure navbar stays above other elements */
+    background-color: #333;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
 }
 
 .navbar ul {
-    list-style-type: none; /* Remove bullets from the list */
-    margin: 0; /* Remove margin from the navbar */
-    padding: 0; /* Remove padding from the navbar */
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: center; /* Center navbar items horizontally */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar li {
-    display: inline; /* Inline display for list items */
+    display: inline;
 }
 
 .navbar a {
-    display: block; /* Block display for clickable areas */
-    color: #FFFFFF; /* White text color for links */
-    background-color: #555555; /* Gray background color for links */
-    text-align: center; /* Center-align text */
-    padding: 8px 10px; /* Padding inside each link */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: bold; /* Bold text for links */
-    font-size: 0.75em; /* Smaller font size for navbar links */
-    border: 1px solid #444; /* Border to differentiate links */
+    display: block;
+    color: #FFFFFF;
+    background-color: #555555;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin: 0 5px;
 }
 
 .navbar a:hover {
-    background-color: #007BFF; /* Blue background on hover */
-    color: #FFFFFF; /* Keep text white on hover */
+    background-color: #007BFF;
+    color: #FFFFFF;
 }
 
 /* Typography and Sections */
 h1, h2 {
-    color: #333333; /* Dark gray color for headers */
-    margin-bottom: 10px; /* Space below headers */
-    text-align: center; /* Center-align headers */
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 h1 {
-    font-size: 1.3em; /* Font size for main section titles */
-    margin-top: 0; /* Remove top margin */
+    font-size: 1.8em;
+    margin-top: 0;
 }
 
 h2 {
-    font-size: 1.1em; /* Font size for subsection titles */
-    border-bottom: 2px solid #808080; /* Border below subsection titles */
-    padding-bottom: 6px; /* Padding below subsection titles */
+    font-size: 1.5em;
+    border-bottom: 2px solid #808080;
+    padding-bottom: 10px;
 }
 
 p, ul li p {
-    font-size: 0.8em; /* Font size for paragraph text */
-    line-height: 1.4; /* Line height for better readability */
-    margin-bottom: 10px; /* Space below paragraphs */
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* Social Links */
 .social-links a {
-    display: inline-block; /* Inline-block display for social links */
-    margin: 2px 5px; /* Small margin around social links */
-    color: #333; /* Dark gray color for social links */
-    text-decoration: none; /* Remove underline from social links */
-    font-size: 0.8em; /* Smaller font size for social links */
+    display: inline-block;
+    margin: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .social-links a:hover {
-    color: #007BFF; /* Blue color on hover */
+    color: #007BFF;
 }
 
 /* Lists */
 ul {
-    list-style-type: none; /* Remove bullets from lists */
-    padding: 0; /* Remove padding from lists */
+    list-style-type: none;
+    padding: 0;
 }
 
 ul li {
-    background: #f0f0f0; /* Light gray background for list items */
-    margin: 6px 0; /* Space around list items */
-    padding: 10px; /* Padding inside list items */
-    border-left: 4px solid #808080; /* Left border for emphasis */
-    border-radius: 6px; /* Rounded corners for list items */
+    background: #f0f0f0;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 4px solid #808080;
+    border-radius: 6px;
 }
 
 ul li h3 {
-    margin-bottom: 4px; /* Space below list item titles */
-    font-size: 0.9em; /* Smaller font size for list headers */
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
 ul li p {
-    margin: 0; /* Remove margin from list item paragraphs */
-    font-size: 0.8em; /* Consistent font size for list paragraphs */
+    margin: 0;
+    font-size: 1em;
 }
 
 a {
-    color: #333333; /* Dark gray color for links */
-    text-decoration: none; /* Remove underline from links */
+    color: #333333;
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
 /* Skill Bars */
 .skill-bar {
-    position: relative; /* Position relative for skill bars */
-    background: #ddd; /* Light gray background for skill bars */
-    border-radius: 5px; /* Rounded corners for skill bars */
-    overflow: hidden; /* Hide overflow */
-    margin-bottom: 6px; /* Space below skill bars */
+    position: relative;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .skill-bar span {
-    display: block; /* Block display for skill bar content */
-    height: 100%; /* Full height for skill bar */
-    background-color: #333; /* Blue color for skill bar */
-    padding: 3px; /* Padding inside skill bar */
-    color: #fff; /* White text color */
-    border-radius: 5px; /* Rounded corners for skill bar */
-    text-align: center; /* Center-align text inside skill bar */
-    font-size: 0.75em; /* Smaller font size for skill bar text */
+    display: block;
+    height: 100%;
+    background-color: #007BFF;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9em;
 }
 
 /* Publications Section with Alternating Background Colors */
 #publications ol li:nth-child(odd) {
-    background-color: #f0f0f0; /* Light gray for odd items */
+    background-color: #f0f0f0;
 }
 
 #publications ol li:nth-child(even) {
-    background-color: #e0e0e0; /* Slightly darker gray for even items */
-    padding: 10px; /* Padding inside even items */
-    margin: 5px 0; /* Space around even items */
-    border-radius: 6px; /* Rounded corners for even items */
+    background-color: #e0e0e0;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
 }
 
 #publications ol li {
-    font-size: 0.75em; /* Font size for publications */
-    margin: 6px 0; /* Space around publication items */
-    padding: 10px; /* Padding inside publication items */
-    border-left: 4px solid #808080; /* Left border for emphasis */
-    border-radius: 6px; /* Rounded corners for publication items */
+    font-size: 1em;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 4px solid #808080;
+    border-radius: 6px;
 }
 
 /* Footer */
 footer {
-    background-color: #333; /* Dark background color for the footer */
-    color: #fff; /* White text color for the footer */
-    text-align: center; /* Center-align text in the footer */
-    padding: 6px 0; /* Padding around footer content */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
 footer p {
-    margin: 0; /* Remove margin from footer paragraphs */
-    font-size: 0.8em; /* Smaller font size for footer text */
+    margin: 0;
+    font-size: 0.9em;
 }
 
 footer a {
-    color: #007BFF; /* Blue color for footer links */
-    text-decoration: none; /* Remove underline from footer links */
+    color: #007BFF;
+    text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
 /* Fellowships Section */
 #fellowships h2 {
-    font-size: 1.1em; /* Font size for fellowships heading */
-    border-bottom: 2px solid #808080; /* Border below fellowships heading */
-    padding-bottom: 6px; /* Padding below heading */
+    font-size: 1.5em;
+    border-bottom: 2px solid #808080;
+    padding-bottom: 10px;
 }
 
 #fellowships ul li {
-    font-size: 0.75em; /* Font size for fellowships list items */
-    line-height: 1.4; /* Line height for readability */
-    padding: 10px; /* Padding inside list items */
-    background: #f0f0f0; /* Light gray background */
-    margin: 6px 0; /* Margin around list items */
-    border-left: 4px solid #808080; /* Left border for emphasis */
-    border-radius: 6px; /* Rounded corners */
+    font-size: 1em;
+    line-height: 1.6;
+    padding: 15px;
+    background: #f9f9f9;
+    margin: 10px 0;
+    border-left: 4px solid #808080;
+    border-radius: 6px;
 }
 
 /* Projects Section */
 #projects h2 {
-    font-size: 1.1em; /* Font size for projects heading */
-    border-bottom: 2px solid #808080; /* Border below projects heading */
-    padding-bottom: 6px; /* Padding below heading */
+    font-size: 1.5em;
+    border-bottom: 2px solid #808080;
+    padding-bottom: 10px;
 }
 
 #projects ul li {
-    font-size: 0.75em; /* Font size for projects list items */
-    line-height: 1.4; /* Line height for readability */
-    padding: 10px; /* Padding inside list items */
-    background: #f0f0f0; /* Light gray background */
-    margin: 6px 0; /* Margin around list items */
-    border-left: 4px solid #808080; /* Left border for emphasis */
-    border-radius: 6px; /* Rounded corners */
+    font-size: 1em;
+    line-height: 1.6;
+    padding: 15px;
+    background: #f9f9f9;
+    margin: 10px 0;
+    border-left: 4px solid #808080;
+    border-radius: 6px;
 }
 
 /* Teaching Section */
 #teaching h2 {
-    font-size: 1.1em; /* Font size for teaching heading */
-    border-bottom: 2px solid #808080; /* Border below teaching heading */
-    padding-bottom: 6px; /* Padding below heading */
+    font-size: 1.5em;
+    border-bottom: 2px solid #808080;
+    padding-bottom: 10px;
 }
 
 #teaching ul li {
-    font-size: 0.75em; /* Font size for teaching list items */
-    line-height: 1.4; /* Line height for readability */
-    padding: 10px; /* Padding inside list items */
-    background: #f0f0f0; /* Light gray background */
-    margin: 6px 0; /* Margin around list items */
-    border-left: 4px solid #808080; /* Left border for emphasis */
-    border-radius: 6px; /* Rounded corners */
+    font-size: 1em;
+    line-height: 1.6;
+    padding: 15px;
+    background: #f9f9f9;
+    margin: 10px 0;
+    border-left: 4px solid #808080;
+    border-radius: 6px;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack the columns vertically on smaller screens */
+        flex-direction: column;
     }
 
     .main-content, .left-column {
-        width: 100%; /* Full width for both columns on smaller screens */
+        width: 100%;
     }
 
     .navbar ul {
-        flex-direction: column; /* Stack navbar items vertically on small screens */
+        flex-direction: column;
     }
 
     .navbar li {
-        width: 100%; /* Full width for navbar items on small screens */
+        width: 100%;
     }
 }
