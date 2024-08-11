@@ -15,28 +15,29 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8em; /* Smaller font size */
+    font-size: 1.5em; /* Smaller font size */
+    color: #ffffff; /* Ensure the name is visible with white color */
 }
 
 header p {
-    margin: 3px 0;
-    font-size: 0.9em; /* Smaller font size */
+    margin: 2px 0;
+    font-size: 0.8em; /* Smaller font size */
 }
 
 .download-cv {
-    margin-top: 10px;
-    padding: 8px 15px;
+    margin-top: 8px;
+    padding: 5px 10px;
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
-    font-size: 0.9em; /* Smaller font size */
+    font-size: 0.8em; /* Smaller font size */
 }
 
 .download-cv:hover {
@@ -68,10 +69,10 @@ header p {
     color: #FFFFFF; /* White color for the text */
     background-color: #555555; /* Medium dark gray background for better contrast */
     text-align: center;
-    padding: 10px 15px; /* Smaller padding */
+    padding: 8px 10px; /* Smaller padding */
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85em; /* Smaller font size */
+    font-size: 0.75em; /* Smaller font size */
     border: 1px solid #444; /* Border to differentiate the links */
 }
 
@@ -82,50 +83,50 @@ header p {
 
 /* Main Container */
 .main-container {
-    max-width: 800px; /* Slightly smaller width */
+    max-width: 700px; /* Smaller width */
     width: 100%;
-    padding: 15px; /* Smaller padding */
+    padding: 10px; /* Smaller padding */
     background-color: #ffffff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin: 20px auto;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin: 15px auto;
 }
 
 .container {
-    margin-bottom: 30px; /* Smaller margin */
+    margin-bottom: 20px; /* Smaller margin */
 }
 
 /* Typography and Sections */
 h1, h2 {
     color: #333333;
-    margin-bottom: 15px; /* Smaller margin */
+    margin-bottom: 10px; /* Smaller margin */
     text-align: center;
 }
 
 h1 {
-    font-size: 1.8em; /* Smaller font size */
+    font-size: 1.5em; /* Smaller font size */
     margin-top: 0;
 }
 
 h2 {
-    font-size: 1.5em; /* Smaller font size */
+    font-size: 1.3em; /* Smaller font size */
     border-bottom: 2px solid #808080;
-    padding-bottom: 8px; /* Smaller padding */
+    padding-bottom: 6px; /* Smaller padding */
 }
 
 p {
-    font-size: 0.9em; /* Smaller font size */
-    line-height: 1.6;
-    margin-bottom: 15px; /* Smaller margin */
+    font-size: 0.8em; /* Smaller font size */
+    line-height: 1.4;
+    margin-bottom: 10px; /* Smaller margin */
 }
 
 /* Social Links */
 .social-links a {
     display: inline-block;
-    margin: 3px 7px;
+    margin: 2px 5px;
     color: #333;
     text-decoration: none;
-    font-size: 0.9em; /* Smaller font size */
+    font-size: 0.8em; /* Smaller font size */
 }
 
 .social-links a:hover {
@@ -140,19 +141,19 @@ ul {
 
 ul li {
     background: #f0f0f0;
-    margin: 8px 0; /* Smaller margin */
-    padding: 15px; /* Smaller padding */
+    margin: 6px 0; /* Smaller margin */
+    padding: 10px; /* Smaller padding */
     border-left: 4px solid #808080;
 }
 
 ul li h3 {
-    margin-bottom: 5px;
-    font-size: 1.1em; /* Smaller font size */
+    margin-bottom: 4px;
+    font-size: 1em; /* Smaller font size */
 }
 
 ul li p {
     margin: 0;
-    font-size: 0.9em; /* Smaller font size */
+    font-size: 0.8em; /* Smaller font size */
 }
 
 a {
@@ -170,18 +171,18 @@ a:hover {
     background: #ddd;
     border-radius: 5px;
     overflow: hidden;
-    margin-bottom: 8px; /* Smaller margin */
+    margin-bottom: 6px; /* Smaller margin */
 }
 
 .skill-bar span {
     display: block;
     height: 100%;
     background-color: #007BFF;
-    padding: 4px; /* Smaller padding */
+    padding: 3px; /* Smaller padding */
     color: #fff;
     border-radius: 5px;
     text-align: center;
-    font-size: 0.85em; /* Smaller font size */
+    font-size: 0.75em; /* Smaller font size */
 }
 
 /* Footer */
@@ -189,12 +190,12 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 8px 0; /* Smaller padding */
+    padding: 6px 0; /* Smaller padding */
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9em; /* Smaller font size */
+    font-size: 0.8em; /* Smaller font size */
 }
 
 footer a {
@@ -209,11 +210,11 @@ footer a:hover {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .main-container {
-        padding: 10px;
+        padding: 8px;
     }
 
     header h1 {
-        font-size: 1.5em; /* Smaller font size */
+        font-size: 1.3em; /* Smaller font size */
     }
 
     .navbar ul {
