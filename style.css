@@ -19,26 +19,13 @@ header {
     text-align: center; /* Center-align text in the header */
 }
 
-.header-content {
-    display: flex; /* Use flexbox to arrange image and text side by side */
-    align-items: center; /* Align items vertically centered */
-    justify-content: center; /* Center content horizontally */
-}
-
-.header-image {
-    max-width: 100px; /* Limit the width of the image */
-    height: auto; /* Keep the aspect ratio */
-    margin-right: 20px; /* Space between the image and text */
-    border-radius: 50%; /* Optional: Make the image circular */
-}
-
-.header-text h1 {
+header h1 {
     margin: 0; /* Remove margin from the header title */
     font-size: 1.3em; /* Font size for the main title in the header */
     color: #ffffff; /* Ensure the title is white */
 }
 
-.header-text p {
+header p {
     margin: 2px 0; /* Small margins for subtext in the header */
     font-size: 0.8em; /* Smaller font size for subtext */
 }
