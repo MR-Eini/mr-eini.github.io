@@ -35,7 +35,7 @@ header p {
     color: #fff; /* White text color */
     text-decoration: none; /* Remove underline from the link */
     border-radius: 4px; /* Rounded corners for the button */
-    font-size: 0.8em; /* Font size for the button text */
+    font-size: 0.75em; /* Font size for the button text */
 }
 
 .download-cv:hover {
@@ -107,17 +107,6 @@ header p {
     border-radius: 6px; /* Rounded corners */
 }
 
-/* Styling for the Right Column */
-.right-column {
-    flex: 1; /* Allow column to grow and shrink as needed */
-    max-width: 200px; /* Fixed maximum width for the right column */
-    background-color: #f0f0f0; /* Light gray background color */
-    margin-left: 15px; /* Space between the right column and main column */
-    padding: 10px; /* Padding inside the right column */
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-radius: 6px; /* Rounded corners */
-}
-
 /* Styling for the Main Content Column */
 .main-container {
     flex: 2; /* Take up more space than side columns */
@@ -130,6 +119,39 @@ header p {
     margin: 0; /* Remove margin */
 }
 
+/* About Section */
+#about h2 {
+    font-size: 1.1em; /* Font size formain-container heading */
+    border-bottom: 2px solid #808080; /* Border below About heading */
+    padding-bottom: 6px; /* Padding below heading */
+}
+
+#about ul li {
+    font-size: 0.75em; /* Font size for About list items */
+    line-height: 1.4; /* Line height for readability */
+    padding: 10px; /* Padding inside list items */
+    background: #f0f0f0; /* Light gray background */
+    margin: 6px 0; /* Margin around list items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners */
+}
+
+/* Research Section */
+#research h2 {
+    font-size: 1.1em; /* Font size formain-container heading */
+    border-bottom: 2px solid #808080; /* Border below Research heading */
+    padding-bottom: 6px; /* Padding below heading */
+}
+
+#research ul li {
+    font-size: 0.75em; /* Font size for Research list items */
+    line-height: 1.4; /* Line height for readability */
+    padding: 10px; /* Padding inside list items */
+    background: #f0f0f0; /* Light gray background */
+    margin: 6px 0; /* Margin around list items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners */
+}
 /* Typography and Section Headings */
 h1, h2 {
     color: #333333; /* Dark gray color for headers */
