@@ -115,7 +115,7 @@ h2 {
 }
 
 p, ul li p {
-    font-size: 0.8em; /* Font size for paragraph text */
+    font-size: 0.75em; /* Font size for paragraph text */
     line-height: 1.4; /* Line height for better readability */
     margin-bottom: 10px; /* Space below paragraphs */
 }
