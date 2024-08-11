@@ -202,23 +202,25 @@ a:hover {
 }
 
 /* Styling for Skill Bars */
+/* Skill Bars */
 .skill-bar {
-    position: relative; /* Position relative for skill bars */
-    background: #ddd; /* Light gray background for skill bars */
-    border-radius: 5px; /* Rounded corners for skill bars */
-    overflow: hidden; /* Hide overflow */
-    margin-bottom: 6px; /* Space below skill bars */
+    position: relative;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 6px;
 }
 
 .skill-bar span {
-    display: block; /* Block display for skill bar content */
-    height: 100%; /* Full height for skill bar */
-    background-color: #333; /* Dark background color for skill bar */
-    padding: 3px; /* Padding inside skill bar */
-    color: #fff; /* White text color */
-    border-radius: 5px; /* Rounded corners for skill bar */
-    text-align: left; /* Center-align text inside skill bar */
-    font-size: 0.75em; /* Smaller font size for skill bar text */
+    display: block;
+    height: 100%;
+    width: 0; /* Start width at 0 for the animation */
+    background-color: #333; /* Default background color */
+    color: #fff;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.75em;
 }
 
 /* Styling for Publications Section with Alternating Background Colors */
