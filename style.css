@@ -44,6 +44,7 @@ header p {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
+/* Navbar Styling */
 .navbar {
     background-color: #333; /* Dark background color for the navbar */
     overflow: hidden; /* Ensure content stays inside the navbar */
@@ -115,7 +116,7 @@ h2 {
 }
 
 p, ul li p {
-    font-size: 0.75em; /* Font size for paragraph text */
+    font-size: 0.8em; /* Font size for paragraph text */
     line-height: 1.4; /* Line height for better readability */
     margin-bottom: 10px; /* Space below paragraphs */
 }
@@ -149,12 +150,12 @@ ul li {
 
 ul li h3 {
     margin-bottom: 4px; /* Space below list item titles */
-    font-size: 0.8em; /* Smaller font size for list headers */
+    font-size: 0.9em; /* Smaller font size for list headers */
 }
 
 ul li p {
     margin: 0; /* Remove margin from list item paragraphs */
-    font-size: 0.75em; /* Consistent font size for list paragraphs */
+    font-size: 0.8em; /* Consistent font size for list paragraphs */
 }
 
 a {
@@ -216,7 +217,7 @@ footer {
 
 footer p {
     margin: 0; /* Remove margin from footer paragraphs */
-    font-size: 0.75em; /* Smaller font size for footer text */
+    font-size: 0.8em; /* Smaller font size for footer text */
 }
 
 footer a {
@@ -226,6 +227,57 @@ footer a {
 
 footer a:hover {
     text-decoration: underline; /* Underline on hover */
+}
+
+/* Fellowships Section */
+#fellowships h2 {
+    font-size: 1.1em; /* Font size for fellowships heading */
+    border-bottom: 2px solid #808080; /* Border below fellowships heading */
+    padding-bottom: 6px; /* Padding below heading */
+}
+
+#fellowships ul li {
+    font-size: 0.75em; /* Font size for fellowships list items */
+    line-height: 1.4; /* Line height for readability */
+    padding: 10px; /* Padding inside list items */
+    background: #f0f0f0; /* Light gray background */
+    margin: 6px 0; /* Margin around list items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners */
+}
+
+/* Projects Section */
+#projects h2 {
+    font-size: 1.1em; /* Font size for projects heading */
+    border-bottom: 2px solid #808080; /* Border below projects heading */
+    padding-bottom: 6px; /* Padding below heading */
+}
+
+#projects ul li {
+    font-size: 0.75em; /* Font size for projects list items */
+    line-height: 1.4; /* Line height for readability */
+    padding: 10px; /* Padding inside list items */
+    background: #f0f0f0; /* Light gray background */
+    margin: 6px 0; /* Margin around list items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners */
+}
+
+/* Teaching Section */
+#teaching h2 {
+    font-size: 1.1em; /* Font size for teaching heading */
+    border-bottom: 2px solid #808080; /* Border below teaching heading */
+    padding-bottom: 6px; /* Padding below heading */
+}
+
+#teaching ul li {
+    font-size: 0.75em; /* Font size for teaching list items */
+    line-height: 1.4; /* Line height for readability */
+    padding: 10px; /* Padding inside list items */
+    background: #f0f0f0; /* Light gray background */
+    margin: 6px 0; /* Margin around list items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners */
 }
 
 /* Responsive Design */
