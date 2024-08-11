@@ -185,6 +185,15 @@ a:hover {
     font-size: 0.75em; /* Smaller font size */
 }
 
+/* Publications Section with Alternating Background Colors */
+#publications ol li:nth-child(odd) {
+    background-color: #f0f0f0; /* Light gray for odd items */
+}
+
+#publications ol li:nth-child(even) {
+    background-color: #e0e0e0; /* Slightly darker gray for even items */
+}
+
 /* Footer */
 footer {
     background-color: #333;
