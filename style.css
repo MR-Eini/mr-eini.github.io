@@ -192,6 +192,17 @@ a:hover {
 
 #publications ol li:nth-child(even) {
     background-color: #e0e0e0; /* Slightly darker gray for even items */
+    padding: 10px; /* Ensure consistent padding */
+    margin: 5px 0; /* Margin to create separation between items */
+    border-radius: 6px; /* Rounding the corners for better aesthetics */
+}
+
+/* Publications Section with Alternating Background Colors */
+#publications ol li {
+    margin: 6px 0; /* Smaller margin */
+    padding: 10px; /* Smaller padding */
+    border-left: 4px solid #808080;
+    border-radius: 6px; /* Adding border-radius to match the main container */
 }
 
 /* Footer */
