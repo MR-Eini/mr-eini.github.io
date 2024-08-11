@@ -246,6 +246,23 @@ footer a:hover {
     border-radius: 6px; /* Rounded corners */
 }
 
+/* co-authors Section */
+#co-authors h2 {
+    font-size: 1.1em; /* Font size for co-authors heading */
+    border-bottom: 2px solid #808080; /* Border below co-authors heading */
+    padding-bottom: 6px; /* Padding below heading */
+}
+
+#co-authors ul li {
+    font-size: 0.75em; /* Font size for co-authors list items */
+    line-height: 1.4; /* Line height for readability */
+    padding: 10px; /* Padding inside list items */
+    background: #f0f0f0; /* Light gray background */
+    margin: 6px 0; /* Margin around list items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners */
+}
+
 /* Projects Section */
 #projects h2 {
     font-size: 1.1em; /* Font size for projects heading */
