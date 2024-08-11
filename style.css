@@ -144,6 +144,7 @@ ul li {
     margin: 6px 0; /* Smaller margin */
     padding: 10px; /* Smaller padding */
     border-left: 4px solid #808080;
+    border-radius: 6px; /* Adding border-radius to match the main container */
 }
 
 ul li h3 {
