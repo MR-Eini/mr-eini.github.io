@@ -22,7 +22,7 @@ header {
 header h1 {
     margin: 0; /* Remove margin from the header title */
     font-size: 1.3em; /* Font size for the main title in the header */
-    color: #ffffff; /* Ensure the title is white */
+    color: #FFD700; /* Change the title color to Gold */
 }
 
 header p {
