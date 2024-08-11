@@ -56,3 +56,45 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
 });
+// Function to animate the skill bars
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-bar span');
+
+    skillBars.forEach(skillBar => {
+        const targetWidth = skillBar.getAttribute('data-percent'); // Get the target width from data attribute
+        let currentWidth = 0;
+
+        function animate() {
+            if (currentWidth < targetWidth) {
+                currentWidth += 1; // Increase width incrementally
+                skillBar.style.width = currentWidth + '%';
+                requestAnimationFrame(animate); // Continue animation
+            } else {
+                skillBar.style.width = targetWidth + '%'; // Ensure it reaches the final width
+            }
+        }
+
+        animate(); // Start the animation
+    });
+}
+
+// Function to observe when the skills section enters the viewport
+function observeSkillsSection() {
+    const skillsSection = document.querySelector('#skills');
+    
+    // Create an IntersectionObserver instance
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { // If the section is in view
+                animateSkillBars(); // Trigger the animation
+                observer.unobserve(skillsSection); // Stop observing after animation is triggered
+            }
+        });
+    }, { threshold: 0.1 }); // Trigger when 10% of the section is in view
+    
+    // Start observing the skills section
+    observer.observe(skillsSection);
+}
+
+// Trigger the observer when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', observeSkillsSection);
