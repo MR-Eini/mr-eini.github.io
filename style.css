@@ -1,248 +1,248 @@
 /* General Styling */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Set the font for the entire webpage */
     line-height: 1.4; /* Line height for better readability */
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f7f7f7; /* Light background color */
+    color: #333; /* Dark gray text color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange flex items in a column */
+    justify-content: center; /* Center content vertically */
 }
 
 /* Header and Navigation */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+    background-color: #333; /* Dark background color for the header */
+    color: #fff; /* White text color for the header */
+    padding: 10px; /* Padding around the header content */
+    text-align: center; /* Center-align text in the header */
 }
 
 header h1 {
-    margin: 0;
-    font-size: 1.3em; /* Smaller font size */
-    color: #ffffff;
+    margin: 0; /* Remove margin from the header title */
+    font-size: 1.3em; /* Font size for the main title in the header */
+    color: #ffffff; /* Ensure the title is white */
 }
 
 header p {
-    margin: 2px 0;
-    font-size: 0.8em; /* Smaller font size */
+    margin: 2px 0; /* Small margins for subtext in the header */
+    font-size: 0.8em; /* Smaller font size for subtext */
 }
 
 .download-cv {
-    margin-top: 8px;
-    padding: 5px 10px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.8em; /* Smaller font size */
+    margin-top: 8px; /* Space above the download button */
+    padding: 5px 10px; /* Padding inside the button */
+    background-color: #007BFF; /* Blue background color for the button */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 4px; /* Rounded corners for the button */
+    font-size: 0.8em; /* Font size for the button text */
 }
 
 .download-cv:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 .navbar {
-    background-color: #333;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #333; /* Dark background color for the navbar */
+    overflow: hidden; /* Ensure content stays inside the navbar */
+    position: sticky; /* Make navbar sticky at the top */
+    top: 0; /* Position navbar at the very top */
+    z-index: 1000; /* Ensure navbar stays above other elements */
 }
 
 .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+    list-style-type: none; /* Remove bullets from the list */
+    margin: 0; /* Remove margin from the navbar */
+    padding: 0; /* Remove padding from the navbar */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center navbar items horizontally */
 }
 
 .navbar li {
-    display: inline;
+    display: inline; /* Inline display for list items */
 }
 
 .navbar a {
-    display: block;
-    color: #FFFFFF;
-    background-color: #555555;
-    text-align: center;
-    padding: 8px 10px;
-    text-decoration: none;
-    font-weight: bold;
+    display: block; /* Block display for clickable areas */
+    color: #FFFFFF; /* White text color for links */
+    background-color: #555555; /* Gray background color for links */
+    text-align: center; /* Center-align text */
+    padding: 8px 10px; /* Padding inside each link */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold text for links */
     font-size: 0.75em; /* Smaller font size for navbar links */
-    border: 1px solid #444;
+    border: 1px solid #444; /* Border to differentiate links */
 }
 
 .navbar a:hover {
-    background-color: #007BFF;
-    color: #FFFFFF;
+    background-color: #007BFF; /* Blue background on hover */
+    color: #FFFFFF; /* Keep text white on hover */
 }
 
 /* Main Container */
 .main-container {
-    max-width: 700px; /* Smaller width */
-    width: 100%;
-    padding: 10px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    margin: 15px auto;
+    max-width: 700px; /* Limit the width of the main container */
+    width: 100%; /* Full width of the container */
+    padding: 10px; /* Padding inside the container */
+    background-color: #ffffff; /* White background for the main content */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 6px; /* Rounded corners */
+    margin: 15px auto; /* Center the container horizontally with some margin */
 }
 
 .container {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below each section */
 }
 
 /* Typography and Sections */
 h1, h2 {
-    color: #333333;
-    margin-bottom: 10px;
-    text-align: center;
+    color: #333333; /* Dark gray color for headers */
+    margin-bottom: 10px; /* Space below headers */
+    text-align: center; /* Center-align headers */
 }
 
 h1 {
-    font-size: 1.3em; /* Smaller font size for main section titles */
-    margin-top: 0;
+    font-size: 1.3em; /* Font size for main section titles */
+    margin-top: 0; /* Remove top margin */
 }
 
 h2 {
-    font-size: 1.1em; /* Smaller font size for subsection titles */
-    border-bottom: 2px solid #808080;
-    padding-bottom: 6px;
+    font-size: 1.1em; /* Font size for subsection titles */
+    border-bottom: 2px solid #808080; /* Border below subsection titles */
+    padding-bottom: 6px; /* Padding below subsection titles */
 }
 
 p, ul li p {
-    font-size: 0.8em; /* Smaller font size for paragraph text */
-    line-height: 1.4; /* Consistent line height for better readability */
-    margin-bottom: 10px;
+    font-size: 0.8em; /* Font size for paragraph text */
+    line-height: 1.4; /* Line height for better readability */
+    margin-bottom: 10px; /* Space below paragraphs */
 }
 
 /* Social Links */
 .social-links a {
-    display: inline-block;
-    margin: 2px 5px;
-    color: #333;
-    text-decoration: none;
-    font-size: 0.8em; /* Smaller font size for social link text */
+    display: inline-block; /* Inline-block display for social links */
+    margin: 2px 5px; /* Small margin around social links */
+    color: #333; /* Dark gray color for social links */
+    text-decoration: none; /* Remove underline from social links */
+    font-size: 0.8em; /* Smaller font size for social links */
 }
 
 .social-links a:hover {
-    color: #007BFF;
+    color: #007BFF; /* Blue color on hover */
 }
 
 /* Lists */
 ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Remove bullets from lists */
+    padding: 0; /* Remove padding from lists */
 }
 
 ul li {
-    background: #f0f0f0;
-    margin: 6px 0;
-    padding: 10px;
-    border-left: 4px solid #808080;
-    border-radius: 6px;
+    background: #f0f0f0; /* Light gray background for list items */
+    margin: 6px 0; /* Space around list items */
+    padding: 10px; /* Padding inside list items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners for list items */
 }
 
 ul li h3 {
-    margin-bottom: 4px;
+    margin-bottom: 4px; /* Space below list item titles */
     font-size: 0.9em; /* Smaller font size for list headers */
 }
 
 ul li p {
-    margin: 0;
+    margin: 0; /* Remove margin from list item paragraphs */
     font-size: 0.8em; /* Consistent font size for list paragraphs */
 }
 
 a {
-    color: #333333;
-    text-decoration: none;
+    color: #333333; /* Dark gray color for links */
+    text-decoration: none; /* Remove underline from links */
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Skill Bars */
 .skill-bar {
-    position: relative;
-    background: #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 6px;
+    position: relative; /* Position relative for skill bars */
+    background: #ddd; /* Light gray background for skill bars */
+    border-radius: 5px; /* Rounded corners for skill bars */
+    overflow: hidden; /* Hide overflow */
+    margin-bottom: 6px; /* Space below skill bars */
 }
 
 .skill-bar span {
-    display: block;
-    height: 100%;
-    background-color: #007BFF;
-    padding: 3px;
-    color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 0.75em; /* Smaller font size for skill bars */
+    display: block; /* Block display for skill bar content */
+    height: 100%; /* Full height for skill bar */
+    background-color: #007BFF; /* Blue color for skill bar */
+    padding: 3px; /* Padding inside skill bar */
+    color: #fff; /* White text color */
+    border-radius: 5px; /* Rounded corners for skill bar */
+    text-align: center; /* Center-align text inside skill bar */
+    font-size: 0.75em; /* Smaller font size for skill bar text */
 }
 
 /* Publications Section with Alternating Background Colors */
 #publications ol li:nth-child(odd) {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light gray for odd items */
 }
 
 #publications ol li:nth-child(even) {
-    background-color: #e0e0e0;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 6px;
+    background-color: #e0e0e0; /* Slightly darker gray for even items */
+    padding: 10px; /* Padding inside even items */
+    margin: 5px 0; /* Space around even items */
+    border-radius: 6px; /* Rounded corners for even items */
 }
 
 #publications ol li {
-   font-size: 0.75em; /* Font size for publications */
-    margin: 6px 0;
-    padding: 10px;
-    border-left: 4px solid #808080;
-    border-radius: 6px;
+    font-size: 0.75em; /* Font size for publications */
+    margin: 6px 0; /* Space around publication items */
+    padding: 10px; /* Padding inside publication items */
+    border-left: 4px solid #808080; /* Left border for emphasis */
+    border-radius: 6px; /* Rounded corners for publication items */
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 6px 0;
+    background-color: #333; /* Dark background color for the footer */
+    color: #fff; /* White text color for the footer */
+    text-align: center; /* Center-align text in the footer */
+    padding: 6px 0; /* Padding around footer content */
 }
 
 footer p {
-    margin: 0;
+    margin: 0; /* Remove margin from footer paragraphs */
     font-size: 0.8em; /* Smaller font size for footer text */
 }
 
 footer a {
-    color: #007BFF;
-    text-decoration: none;
+    color: #007BFF; /* Blue color for footer links */
+    text-decoration: none; /* Remove underline from footer links */
 }
 
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .main-container {
-        padding: 8px;
+        padding: 8px; /* Reduce padding for smaller screens */
     }
 
     header h1 {
-        font-size: 1.1em; /* Smaller font size */
+        font-size: 1.1em; /* Smaller font size for header title on small screens */
     }
 
     .navbar ul {
-        flex-direction: column;
+        flex-direction: column; /* Stack navbar items vertically on small screens */
     }
 
     .navbar li {
-        width: 100%;
+        width: 100%; /* Full width for navbar items on small screens */
     }
 }
