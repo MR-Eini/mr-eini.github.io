@@ -149,7 +149,7 @@ ul li {
 
 ul li h3 {
     margin-bottom: 4px; /* Space below list item titles */
-    font-size: 0.9em; /* Smaller font size for list headers */
+    font-size: 0.8em; /* Smaller font size for list headers */
 }
 
 ul li p {
@@ -216,7 +216,7 @@ footer {
 
 footer p {
     margin: 0; /* Remove margin from footer paragraphs */
-    font-size: 0.8em; /* Smaller font size for footer text */
+    font-size: 0.75em; /* Smaller font size for footer text */
 }
 
 footer a {
