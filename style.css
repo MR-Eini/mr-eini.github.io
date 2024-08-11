@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -6,9 +7,73 @@ body {
     background-color: #f7f7f7;
     color: #333;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
+/* Header and Navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0;
+}
+
+.download-cv {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-cv:hover {
+    background-color: #0056b3;
+}
+
+.navbar {
+    background-color: #444;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+/* Main Container */
 .main-container {
     max-width: 900px;
     width: 100%;
@@ -16,12 +81,14 @@ body {
     background-color: #ffffff;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin: 20px auto;
 }
 
 .container {
     margin-bottom: 40px;
 }
 
+/* Typography and Sections */
 h1, h2 {
     color: #333333;
     margin-bottom: 20px;
@@ -45,6 +112,20 @@ p {
     margin-bottom: 20px;
 }
 
+/* Social Links */
+.social-links a {
+    display: inline-block;
+    margin: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #007BFF;
+}
+
+/* Lists */
 ul {
     list-style-type: none;
     padding: 0;
@@ -75,12 +156,61 @@ a:hover {
     text-decoration: underline;
 }
 
-.social-links a {
-    margin-right: 10px;
+/* Skill Bars */
+.skill-bar {
+    position: relative;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
+.skill-bar span {
+    display: block;
+    height: 100%;
+    background-color: #007BFF;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     .main-container {
         padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        width: 100%;
     }
 }
