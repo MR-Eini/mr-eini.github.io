@@ -54,7 +54,90 @@
             <div class="social-links">
             <a href="https://www.scopus.com/authid/detail.uri?authorId=57207841053" target="_blank"><i class="fas fa-book"></i> Scopus</a>
             </div>
-            <a href="https://sggwpl-my.sharepoint.com/:b:/g/personal/d003066_sggw_edu_pl/ES5NIZKAZNVKpls3ZrmKZEoBBXvsl5bnfyyM2Z-UExPrXg?e=8fnfSm" class="download-cv" target="_blank">Download CV</a>
+            <div class="social-links">           
+            <!-- Trigger/Open The Modal -->
+                <button id="myBtn">Contact info</button>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Email: mohammad_eini@sggw.edu.pl</p>
+                </div>
+                </div>
+                <style>
+                    /* The Modal (background) */
+                    .modal {
+                        display: none; /* Hidden by default */
+                        position: fixed; /* Stay in place */
+                        z-index: 1; /* Sit on top */
+                        left: 0;
+                        top: 0;
+                        width: 100%; /* Full width */
+                        height: 100%; /* Full height */
+                        overflow: auto; /* Enable scroll if needed */
+                        background-color: rgb(0,0,0); /* Fallback color */
+                        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                    }
+
+                    /* Modal Content */
+                    .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto; /* 15% from the top and centered */
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width: 80%; /* Could be more or less, depending on screen size */
+                    }
+
+                    /* The Close Button */
+                    .close {
+                        color: #aaa;
+                        float: right;
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
+
+                    .close:hover,
+                    .close:focus {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                </style>
+
+                <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+                </script>
+                </div> 
+                <div class="social-links">
+                    <p>Download my CV:</p>
+                </div>
+                <a href="https://sggwpl-my.sharepoint.com/:b:/g/personal/d003066_sggw_edu_pl/ES5NIZKAZNVKpls3ZrmKZEoBBXvsl5bnfyyM2Z-UExPrXg?e=8fnfSm" class="download-cv" target="_blank">Download CV</a>
         </div>
 
         <div class="main-container">
@@ -207,6 +290,115 @@
                     </div>
                 </div>
             </section>
+
+            <button id="scrollToTopBtn" title="Go to top">Top</button>
+<style>
+    #scrollToTopBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Place the button at the bottom */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        font-size: 18px; /* Increase font size */
+        background-color: #555; /* Dark background */
+        color: white; /* White text */
+        border: none; /* Remove borders */
+        cursor: pointer; /* Add a pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #333; /* Darker background on hover */
+    }
+</style>
+
+<script>
+    // Get the button
+    let mybutton = document.getElementById("scrollToTopBtn");
+
+    // Show the button when the user scrolls down 20px from the top
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // Scroll to the top of the page when the button is clicked
+    mybutton.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+<canvas id="backgroundCanvas"></canvas>
+
+<style>
+    #backgroundCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Behind the content */
+        pointer-events: none; /* No interaction with the canvas */
+    }
+</style>
+
+<script>
+    const canvas = document.getElementById('backgroundCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Resize the canvas to fill the window
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
+    // Example of simple particle animation
+    let particlesArray = [];
+
+    function initParticles() {
+        particlesArray = [];
+        for (let i = 0; i < 100; i++) {
+            let size = Math.random() * 5 + 1;
+            let x = Math.random() * (innerWidth - size * 2);
+            let y = Math.random() * (innerHeight - size * 2);
+            let dx = (Math.random() - 0.5) * 2;
+            let dy = (Math.random() - 0.5) * 2;
+            particlesArray.push({ x, y, dx, dy, size });
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+        particlesArray.forEach(p => {
+            p.x += p.dx;
+            p.y += p.dy;
+
+            if (p.x + p.size > innerWidth || p.x - p.size < 0) p.dx = -p.dx;
+            if (p.y + p.size > innerHeight || p.y - p.size < 0) p.dy = -p.dy;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fill();
+            ctx.closePath();
+        });
+
+        requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+</script>
+
+
+
 
         </main>
     </div>
