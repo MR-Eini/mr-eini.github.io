@@ -1,4 +1,4 @@
-/* General Styling */
+/* General Styling for the Body */
 body {
     font-family: 'Roboto', sans-serif; /* Set the font for the entire webpage */
     line-height: 1.4; /* Line height for better readability */
@@ -6,12 +6,9 @@ body {
     padding: 0; /* Remove default padding */
     background-color: #f7f7f7; /* Light background color */
     color: #333; /* Dark gray text color */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange flex items in a column */
-    justify-content: center; /* Center content vertically */
 }
 
-/* Header and Navigation */
+/* Styling for the Header */
 header {
     background-color: #333; /* Dark background color for the header */
     color: #fff; /* White text color for the header */
@@ -22,7 +19,7 @@ header {
 header h1 {
     margin: 0; /* Remove margin from the header title */
     font-size: 1.3em; /* Font size for the main title in the header */
-    color: #fff; /* Change the title color to Gold */
+    color: #fff; /* White text color for the title */
 }
 
 header p {
@@ -30,6 +27,7 @@ header p {
     font-size: 0.8em; /* Smaller font size for subtext */
 }
 
+/* Styling for the Download CV Button */
 .download-cv {
     margin-top: 8px; /* Space above the download button */
     padding: 5px 10px; /* Padding inside the button */
@@ -51,6 +49,12 @@ header p {
     position: sticky; /* Make navbar sticky at the top */
     top: 0; /* Position navbar at the very top */
     z-index: 1000; /* Ensure navbar stays above other elements */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hiding/showing */
+}
+
+/* Hidden State of Navbar */
+.navbar.hidden {
+    transform: translateY(-100%); /* Move navbar completely out of the viewport */
 }
 
 .navbar ul {
@@ -82,22 +86,51 @@ header p {
     color: #FFFFFF; /* Keep text white on hover */
 }
 
-/* Main Container */
+/* Container for the three columns layout */
+.page-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center all columns horizontally */
+    align-items: flex-start; /* Align items to the top */
+    max-width: 1200px; /* Maximum width of the entire container */
+    margin: 15px auto; /* Center container horizontally and add margin */
+    padding: 10px; /* Padding inside the container */
+}
+
+/* Styling for the Left Column */
+.left-column {
+    flex: 1; /* Allow column to grow and shrink as needed */
+    max-width: 200px; /* Fixed maximum width for the left column */
+    background-color: #f0f0f0; /* Light gray background color */
+    margin-right: 15px; /* Space between the left column and main column */
+    padding: 10px; /* Padding inside the left column */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 6px; /* Rounded corners */
+}
+
+/* Styling for the Right Column */
+.right-column {
+    flex: 1; /* Allow column to grow and shrink as needed */
+    max-width: 200px; /* Fixed maximum width for the right column */
+    background-color: #f0f0f0; /* Light gray background color */
+    margin-left: 15px; /* Space between the right column and main column */
+    padding: 10px; /* Padding inside the right column */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 6px; /* Rounded corners */
+}
+
+/* Styling for the Main Content Column */
 .main-container {
-    max-width: 700px; /* Limit the width of the main container */
+    flex: 2; /* Take up more space than side columns */
+    max-width: 700px; /* Maximum width for the main content */
     width: 100%; /* Full width of the container */
     padding: 10px; /* Padding inside the container */
     background-color: #ffffff; /* White background for the main content */
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border-radius: 6px; /* Rounded corners */
-    margin: 15px auto; /* Center the container horizontally with some margin */
+    margin: 0; /* Remove margin */
 }
 
-.container {
-    margin-bottom: 20px; /* Space below each section */
-}
-
-/* Typography and Sections */
+/* Typography and Section Headings */
 h1, h2 {
     color: #333333; /* Dark gray color for headers */
     margin-bottom: 10px; /* Space below headers */
@@ -121,7 +154,7 @@ p, ul li p {
     margin-bottom: 10px; /* Space below paragraphs */
 }
 
-/* Social Links */
+/* Styling for Social Links */
 .social-links a {
     display: inline-block; /* Inline-block display for social links */
     margin: 2px 5px; /* Small margin around social links */
@@ -134,7 +167,7 @@ p, ul li p {
     color: #007BFF; /* Blue color on hover */
 }
 
-/* Lists */
+/* Styling for Unordered Lists */
 ul {
     list-style-type: none; /* Remove bullets from lists */
     padding: 0; /* Remove padding from lists */
@@ -158,6 +191,7 @@ ul li p {
     font-size: 0.8em; /* Consistent font size for list paragraphs */
 }
 
+/* Styling for General Links */
 a {
     color: #333333; /* Dark gray color for links */
     text-decoration: none; /* Remove underline from links */
@@ -167,7 +201,7 @@ a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Skill Bars */
+/* Styling for Skill Bars */
 .skill-bar {
     position: relative; /* Position relative for skill bars */
     background: #ddd; /* Light gray background for skill bars */
@@ -179,15 +213,15 @@ a:hover {
 .skill-bar span {
     display: block; /* Block display for skill bar content */
     height: 100%; /* Full height for skill bar */
-    background-color: #333; /* Blue color for skill bar */
+    background-color: #333; /* Dark background color for skill bar */
     padding: 3px; /* Padding inside skill bar */
     color: #fff; /* White text color */
     border-radius: 5px; /* Rounded corners for skill bar */
-    text-align: center; /* Center-align text inside skill bar */
+    text-align: left; /* Center-align text inside skill bar */
     font-size: 0.75em; /* Smaller font size for skill bar text */
 }
 
-/* Publications Section with Alternating Background Colors */
+/* Styling for Publications Section with Alternating Background Colors */
 #publications ol li:nth-child(odd) {
     background-color: #f0f0f0; /* Light gray for odd items */
 }
@@ -207,28 +241,6 @@ a:hover {
     border-radius: 6px; /* Rounded corners for publication items */
 }
 
-/* Footer */
-footer {
-    background-color: #333; /* Dark background color for the footer */
-    color: #fff; /* White text color for the footer */
-    text-align: center; /* Center-align text in the footer */
-    padding: 6px 0; /* Padding around footer content */
-}
-
-footer p {
-    margin: 0; /* Remove margin from footer paragraphs */
-    font-size: 0.8em; /* Smaller font size for footer text */
-}
-
-footer a {
-    color: #007BFF; /* Blue color for footer links */
-    text-decoration: none; /* Remove underline from footer links */
-}
-
-footer a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
 /* Fellowships Section */
 #fellowships h2 {
     font-size: 1.1em; /* Font size for fellowships heading */
@@ -246,7 +258,7 @@ footer a:hover {
     border-radius: 6px; /* Rounded corners */
 }
 
-/* co-authors Section */
+/* Co-authors Section */
 #co-authors h2 {
     font-size: 1.1em; /* Font size for co-authors heading */
     border-bottom: 2px solid #808080; /* Border below co-authors heading */
@@ -297,21 +309,41 @@ footer a:hover {
     border-radius: 6px; /* Rounded corners */
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 1024px) {
+    .page-container {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center-align stacked columns */
+    }
+    
+    .left-column, .right-column {
+        max-width: 100%; /* Full width for side columns on small screens */
+        margin: 10px 0; /* Space above and below side columns */
+    }
+
     .main-container {
-        padding: 8px; /* Reduce padding for smaller screens */
+        max-width: 100%; /* Full width for main content on small screens */
     }
+}
 
-    header h1 {
-        font-size: 1.1em; /* Smaller font size for header title on small screens */
-    }
+/* Footer Styling */
+footer {
+    background-color: #333; /* Dark background color for the footer */
+    color: #fff; /* White text color for the footer */
+    text-align: center; /* Center-align text in the footer */
+    padding: 6px 0; /* Padding around footer content */
+}
 
-    .navbar ul {
-        flex-direction: column; /* Stack navbar items vertically on small screens */
-    }
+footer p {
+    margin: 0; /* Remove margin from footer paragraphs */
+    font-size: 0.8em; /* Smaller font size for footer text */
+}
 
-    .navbar li {
-        width: 100%; /* Full width for navbar items on small screens */
-    }
+footer a {
+    color: #007BFF; /* Blue color for footer links */
+    text-decoration: none; /* Remove underline from footer links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
