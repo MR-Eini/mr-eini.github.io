@@ -231,7 +231,7 @@ footer a:hover {
 
 /* Fellowships Section */
 #fellowships h2 {
-    font-size: 1.1em; /* Font size for fellowships heading */
+    font-size: 0.75em; /* Font size for fellowships heading */
     border-bottom: 2px solid #808080; /* Border below fellowships heading */
     padding-bottom: 6px; /* Padding below heading */
 }
@@ -248,7 +248,7 @@ footer a:hover {
 
 /* Projects Section */
 #projects h2 {
-    font-size: 1.1em; /* Font size for projects heading */
+    font-size: 0.75em; /* Font size for projects heading */
     border-bottom: 2px solid #808080; /* Border below projects heading */
     padding-bottom: 6px; /* Padding below heading */
 }
@@ -265,7 +265,7 @@ footer a:hover {
 
 /* Teaching Section */
 #teaching h2 {
-    font-size: 1.1em; /* Font size for teaching heading */
+    font-size: 0.75em; /* Font size for teaching heading */
     border-bottom: 2px solid #808080; /* Border below teaching heading */
     padding-bottom: 6px; /* Padding below heading */
 }
