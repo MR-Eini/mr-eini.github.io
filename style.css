@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
+    line-height: 1.4; /* Line height for better readability */
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
@@ -21,8 +21,8 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 1.5em; /* Smaller font size */
-    color: #ffffff; /* Ensure the name is visible with white color */
+    font-size: 1.3em; /* Smaller font size */
+    color: #ffffff;
 }
 
 header p {
@@ -45,7 +45,7 @@ header p {
 }
 
 .navbar {
-    background-color: #333; /* Darker gray for better contrast */
+    background-color: #333;
     overflow: hidden;
     position: sticky;
     top: 0;
@@ -66,26 +66,26 @@ header p {
 
 .navbar a {
     display: block;
-    color: #FFFFFF; /* White color for the text */
-    background-color: #555555; /* Medium dark gray background for better contrast */
+    color: #FFFFFF;
+    background-color: #555555;
     text-align: center;
-    padding: 8px 10px; /* Smaller padding */
+    padding: 8px 10px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.75em; /* Smaller font size */
-    border: 1px solid #444; /* Border to differentiate the links */
+    font-size: 0.75em; /* Smaller font size for navbar links */
+    border: 1px solid #444;
 }
 
 .navbar a:hover {
-    background-color: #007BFF; /* Blue background on hover for better visibility */
-    color: #FFFFFF; /* Keep text white on hover */
+    background-color: #007BFF;
+    color: #FFFFFF;
 }
 
 /* Main Container */
 .main-container {
     max-width: 700px; /* Smaller width */
     width: 100%;
-    padding: 10px; /* Smaller padding */
+    padding: 10px;
     background-color: #ffffff;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
@@ -93,31 +93,31 @@ header p {
 }
 
 .container {
-    margin-bottom: 20px; /* Smaller margin */
+    margin-bottom: 20px;
 }
 
 /* Typography and Sections */
 h1, h2 {
     color: #333333;
-    margin-bottom: 10px; /* Smaller margin */
+    margin-bottom: 10px;
     text-align: center;
 }
 
 h1 {
-    font-size: 1.5em; /* Smaller font size */
+    font-size: 1.3em; /* Smaller font size for main section titles */
     margin-top: 0;
 }
 
 h2 {
-    font-size: 1.3em; /* Smaller font size */
+    font-size: 1.1em; /* Smaller font size for subsection titles */
     border-bottom: 2px solid #808080;
-    padding-bottom: 6px; /* Smaller padding */
+    padding-bottom: 6px;
 }
 
-p {
-    font-size: 0.8em; /* Smaller font size */
-    line-height: 1.4;
-    margin-bottom: 10px; /* Smaller margin */
+p, ul li p {
+    font-size: 0.8em; /* Smaller font size for paragraph text */
+    line-height: 1.4; /* Consistent line height for better readability */
+    margin-bottom: 10px;
 }
 
 /* Social Links */
@@ -126,7 +126,7 @@ p {
     margin: 2px 5px;
     color: #333;
     text-decoration: none;
-    font-size: 0.8em; /* Smaller font size */
+    font-size: 0.8em; /* Smaller font size for social link text */
 }
 
 .social-links a:hover {
@@ -141,20 +141,20 @@ ul {
 
 ul li {
     background: #f0f0f0;
-    margin: 6px 0; /* Smaller margin */
-    padding: 10px; /* Smaller padding */
+    margin: 6px 0;
+    padding: 10px;
     border-left: 4px solid #808080;
-    border-radius: 6px; /* Adding border-radius to match the main container */
+    border-radius: 6px;
 }
 
 ul li h3 {
     margin-bottom: 4px;
-    font-size: 1em; /* Smaller font size */
+    font-size: 0.9em; /* Smaller font size for list headers */
 }
 
 ul li p {
     margin: 0;
-    font-size: 0.8em; /* Smaller font size */
+    font-size: 0.8em; /* Consistent font size for list paragraphs */
 }
 
 a {
@@ -172,38 +172,37 @@ a:hover {
     background: #ddd;
     border-radius: 5px;
     overflow: hidden;
-    margin-bottom: 6px; /* Smaller margin */
+    margin-bottom: 6px;
 }
 
 .skill-bar span {
     display: block;
     height: 100%;
     background-color: #007BFF;
-    padding: 3px; /* Smaller padding */
+    padding: 3px;
     color: #fff;
     border-radius: 5px;
     text-align: center;
-    font-size: 0.75em; /* Smaller font size */
+    font-size: 0.75em; /* Smaller font size for skill bars */
 }
 
 /* Publications Section with Alternating Background Colors */
 #publications ol li:nth-child(odd) {
-    background-color: #f0f0f0; /* Light gray for odd items */
+    background-color: #f0f0f0;
 }
 
 #publications ol li:nth-child(even) {
-    background-color: #e0e0e0; /* Slightly darker gray for even items */
-    padding: 10px; /* Ensure consistent padding */
-    margin: 5px 0; /* Margin to create separation between items */
-    border-radius: 6px; /* Rounding the corners for better aesthetics */
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
 }
 
-/* Publications Section with Alternating Background Colors */
 #publications ol li {
-    margin: 6px 0; /* Smaller margin */
-    padding: 10px; /* Smaller padding */
+    margin: 6px 0;
+    padding: 10px;
     border-left: 4px solid #808080;
-    border-radius: 6px; /* Adding border-radius to match the main container */
+    border-radius: 6px;
 }
 
 /* Footer */
@@ -211,12 +210,12 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 6px 0; /* Smaller padding */
+    padding: 6px 0;
 }
 
 footer p {
     margin: 0;
-    font-size: 0.8em; /* Smaller font size */
+    font-size: 0.8em; /* Smaller font size for footer text */
 }
 
 footer a {
@@ -235,7 +234,7 @@ footer a:hover {
     }
 
     header h1 {
-        font-size: 1.3em; /* Smaller font size */
+        font-size: 1.1em; /* Smaller font size */
     }
 
     .navbar ul {
