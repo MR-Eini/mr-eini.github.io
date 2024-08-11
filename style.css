@@ -115,7 +115,7 @@ h2 {
 }
 
 p, ul li p {
-    font-size: 0.8em; /* Smaller font size for paragraph text */
+    font-size: 0.75em; /* Smaller font size for paragraph text */
     line-height: 1.4; /* Consistent line height for better readability */
     margin-bottom: 10px;
 }
@@ -126,7 +126,7 @@ p, ul li p {
     margin: 2px 5px;
     color: #333;
     text-decoration: none;
-    font-size: 0.8em; /* Smaller font size for social link text */
+    font-size: 0.75em; /* Smaller font size for social link text */
 }
 
 .social-links a:hover {
@@ -154,7 +154,7 @@ ul li h3 {
 
 ul li p {
     margin: 0;
-    font-size: 0.8em; /* Consistent font size for list paragraphs */
+    font-size: 0.75em; /* Consistent font size for list paragraphs */
 }
 
 a {
@@ -196,6 +196,7 @@ a:hover {
     padding: 10px;
     margin: 5px 0;
     border-radius: 6px;
+    font-size: 0.75em;
 }
 
 #publications ol li {
@@ -203,6 +204,7 @@ a:hover {
     padding: 10px;
     border-left: 4px solid #808080;
     border-radius: 6px;
+    font-size: 0.75em;
 }
 
 /* Footer */
