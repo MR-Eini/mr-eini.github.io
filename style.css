@@ -154,7 +154,7 @@ ul li h3 {
 
 ul li p {
     margin: 0; /* Remove margin from list item paragraphs */
-    font-size: 0.8em; /* Consistent font size for list paragraphs */
+    font-size: 0.75em; /* Consistent font size for list paragraphs */
 }
 
 a {
