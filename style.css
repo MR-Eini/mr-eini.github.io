@@ -7,45 +7,8 @@ body {
     background-color: #f7f7f7; /* Light background color */
     color: #333; /* Dark gray text color */
     display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content horizontally */
-}
-
-/* Container with two columns */
-.container {
-    display: flex;
-    max-width: 1200px; /* Adjust width as needed */
-    margin: 20px auto;
-}
-
-/* Right Column Styling */
-.right-column {
-    width: 25%; /* Adjust width as needed */
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-left: 2px solid #ccc; /* Optional: Adds a separator between columns */
-}
-
-.right-column h2 {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.right-column ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.right-column ul li {
-    font-size: 0.9em;
-    margin-bottom: 8px;
-}
-
-/* Main Content Styling */
-.main-content {
-    width: 75%; /* Adjust width as needed */
-    padding: 10px;
-    background-color: #ffffff;
+    flex-direction: column; /* Arrange flex items in a column */
+    justify-content: center; /* Center content vertically */
 }
 
 /* Header and Navigation */
@@ -59,7 +22,7 @@ header {
 header h1 {
     margin: 0; /* Remove margin from the header title */
     font-size: 1.3em; /* Font size for the main title in the header */
-    color: #fff; /* White color for the title */
+    color: #fff; /* Change the title color to Gold */
 }
 
 header p {
@@ -117,6 +80,21 @@ header p {
 .navbar a:hover {
     background-color: #007BFF; /* Blue background on hover */
     color: #FFFFFF; /* Keep text white on hover */
+}
+
+/* Main Container */
+.main-container {
+    max-width: 700px; /* Limit the width of the main container */
+    width: 100%; /* Full width of the container */
+    padding: 10px; /* Padding inside the container */
+    background-color: #ffffff; /* White background for the main content */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 6px; /* Rounded corners */
+    margin: 15px auto; /* Center the container horizontally with some margin */
+}
+
+.container {
+    margin-bottom: 20px; /* Space below each section */
 }
 
 /* Typography and Sections */
@@ -304,12 +282,12 @@ footer a:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack the columns vertically on smaller screens */
+    .main-container {
+        padding: 8px; /* Reduce padding for smaller screens */
     }
 
-    .main-content, .right-column {
-        width: 100%; /* Full width for both columns on smaller screens */
+    header h1 {
+        font-size: 1.1em; /* Smaller font size for header title on small screens */
     }
 
     .navbar ul {
