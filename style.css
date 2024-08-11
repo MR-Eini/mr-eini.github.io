@@ -63,14 +63,16 @@ header p {
 
 .navbar a {
     display: block;
-    color: #fff;
+    color: #FFFFFF; /* White color for better readability */
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    font-weight: bold; /* Make the text bold for better visibility */
 }
 
 .navbar a:hover {
     background-color: #575757; /* Darker gray on hover */
+    color: #FFFFFF; /* Keep the font color white on hover */
 }
 
 /* Main Container */
