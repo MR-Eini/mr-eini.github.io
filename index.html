@@ -26,20 +26,374 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-t6k3Un7X1Xo95Yb+4X4q5F/BjkAex5+isv+m7HkF0WySZyQ5BdwxmrYxezj3rW4lVDA3f7/7m1z93C9eQFq3mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS Styles -->
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1abc9c;
+        }
+
+        /* Header */
+        header {
+            background: rgba(44, 62, 80, 0.8);
+            color: #ecf0f1;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Navigation */
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: #ecf0f1;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background: #1abc9c;
+        }
+
+        /* Main Content */
+        .page-container {
+            display: flex;
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        /* Left Column */
+        .left-column {
+            flex: 1;
+            max-width: 300px;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .profile-photo {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 4px solid #1abc9c;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .left-column h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .left-column p {
+            margin-bottom: 0.5rem;
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            margin: 0.5rem 0;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #2980b9;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            color: #1abc9c;
+        }
+
+        .download-cv {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #1abc9c;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .download-cv:hover {
+            background: #16a085;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 2000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 2rem;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #1abc9c;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Main Container */
+        .main-container {
+            flex: 3;
+            padding: 0 2rem;
+        }
+
+        main section {
+            margin-bottom: 3rem;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        main section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Buttons */
+        #myBtn, #scrollToTopBtn {
+            background: #1abc9c;
+            color: #ffffff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+        }
+
+        #myBtn:hover, #scrollToTopBtn:hover {
+            background: #16a085;
+        }
+
+        /* Skills Section */
+        .skill {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .skill-bar {
+            background: #ecf0f1;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 20px;
+            background: #1abc9c;
+            width: 0;
+            border-radius: 25px;
+            transition: width 2s ease;
+            position: relative;
+        }
+
+        .skill-bar span::after {
+            content: attr(data-percent) "%";
+            position: absolute;
+            right: 10px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.5rem 0;
+            position: relative;
+        }
+
+        footer a {
+            color: #1abc9c;
+        }
+
+        /* Scroll To Top Button */
+        #scrollToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            bottom: 30px; /* Place the button at the bottom */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 1000; /* Make sure it does not overlap */
+            font-size: 18px; /* Increase font size */
+            background-color: #555; /* Dark background */
+            color: white; /* White text */
+            border: none; /* Remove borders */
+            cursor: pointer; /* Add a pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 50%; /* Rounded corners */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #333; /* Darker background on hover */
+            transform: scale(1.1);
+        }
+
+        /* Background Canvas */
+        #backgroundCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind the content */
+            pointer-events: none; /* No interaction with the canvas */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .page-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left-column {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .main-container {
+                padding: 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Background Canvas -->
+    <canvas id="backgroundCanvas"></canvas>
+
+    <!-- Header -->
     <header>
         <div class="container">
-         </div>
+            <h1>Mohammad Reza Eini</h1>
+        </div>
     </header>
     
+    <!-- Navigation -->
     <nav class="navbar">
         <ul>
             <li><a href="#about">About</a></li>
@@ -54,395 +408,362 @@
         </ul>
     </nav>
 
+    <!-- Page Container -->
     <div class="page-container">
+        <!-- Left Column -->
         <div class="left-column">
-            <!-- Content for the left column -->
             <img src="https://i1.rgstatic.net/ii/profile.image/11431281086928462-1664436009981_Q512/Mohammad-Reza-Eini.jpg" alt="Mohammad Reza Eini" class="profile-photo">
             <h3>Mohammad Reza Eini, PhD, MSc, BSc</h3>
             <h3>Professor (Assistant)</h3>
             <p>Warsaw University of Life Sciences - SGGW</p>
             <p>Institute of Environmental Engineering</p>
             <p>Department of Hydrology, Meteorology, and Water Management</p>    
+            
             <div class="social-links">
-            <a href="https://www.researchgate.net/profile/Mohammad_Reza_Eini" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
-            </div>
-            <div class="social-links">
-            <a href="https://scholar.google.com/citations?user=8WN65OIAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-            </div>
-            <div class="social-links">
-            </div>
-            <div class="social-links">
-            <a href="https://www.linkedin.com/in/MREini/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-            <div class="social-links">
-            <a href="https://www.scopus.com/authid/detail.uri?authorId=57207841053" target="_blank"><i class="fas fa-book"></i> Scopus</a>
-            </div>
-            <div class="social-links">
-            <a href="https://bw.sggw.edu.pl/info/author/WULS2d5423f309064ba0b1de52f4bb4901af/" target="_blank"><i class="fas fa-school"></i> WULS-SGGW</a>
+                <a href="https://www.researchgate.net/profile/Mohammad_Reza_Eini" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                <a href="https://scholar.google.com/citations?user=8WN65OIAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a href="https://www.linkedin.com/in/MREini/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=57207841053" target="_blank"><i class="fas fa-book"></i> Scopus</a>
+                <a href="https://bw.sggw.edu.pl/info/author/WULS2d5423f309064ba0b1de52f4bb4901af/" target="_blank"><i class="fas fa-school"></i> WULS-SGGW</a>
             </div>   
-            <div class="social-links">           
-            <!-- Trigger/Open The Modal -->
-                <button id="myBtn">Contact info</button>
+
+            <!-- Contact Modal Trigger -->
+            <div class="social-links">
+                <button id="myBtn">Contact Info</button>
 
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Email: mohammad_eini@sggw.edu.pl</p>
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Contact Information</h3>
+                        <p>Email: <a href="mailto:mohammad_eini@sggw.edu.pl">mohammad_eini@sggw.edu.pl</a></p>
+                    </div>
                 </div>
-                </div>
-                <style>
-                    /* The Modal (background) */
-                    .modal {
-                        display: none; /* Hidden by default */
-                        position: fixed; /* Stay in place */
-                        z-index: 1; /* Sit on top */
-                        left: 0;
-                        top: 0;
-                        width: 100%; /* Full width */
-                        height: 100%; /* Full height */
-                        overflow: auto; /* Enable scroll if needed */
-                        background-color: rgb(0,0,0); /* Fallback color */
-                        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-                    }
+            </div> 
 
-                    /* Modal Content */
-                    .modal-content {
-                        background-color: #fefefe;
-                        margin: 15% auto; /* 15% from the top and centered */
-                        padding: 20px;
-                        border: 1px solid #888;
-                        width: 80%; /* Could be more or less, depending on screen size */
-                    }
-
-                    /* The Close Button */
-                    .close {
-                        color: #aaa;
-                        float: right;
-                        font-size: 28px;
-                        font-weight: bold;
-                    }
-
-                    .close:hover,
-                    .close:focus {
-                        color: black;
-                        text-decoration: none;
-                        cursor: pointer;
-                    }
-                </style>
-
-                <script>
-                // Get the modal
-                var modal = document.getElementById("myModal");
-
-                // Get the button that opens the modal
-                var btn = document.getElementById("myBtn");
-
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close")[0];
-
-                // When the user clicks the button, open the modal 
-                btn.onclick = function() {
-                modal.style.display = "block";
-                }
-
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function() {
-                modal.style.display = "none";
-                }
-
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-                }
-                </script>
-                </div> 
-                <div class="social-links">
-                    <p>Download my CV:</p>
-                </div>
+            <!-- Download CV -->
+            <div class="social-links">           
+                <p>Download my CV:</p>
                 <a href="https://sggwpl-my.sharepoint.com/:b:/g/personal/d003066_sggw_edu_pl/ET9MB8EbCKZBlKXB2rVMf-MBXPj0lmjugbAaxv_x16b2lA?e=brUowN" class="download-cv" target="_blank">Download CV</a>
+            </div>
         </div>
 
+        <!-- Main Content -->
         <div class="main-container">
             <main>
+                <!-- About Section -->
                 <section id="about">
                     <div class="container">
                         <h2>About Me</h2>
+                        <p>I am Mohammad Reza Eini, a dedicated and innovative researcher specializing in Environmental Engineering, with a focus on hydrology, meteorology, and water management. I recently completed my PhD at the Warsaw University of Life Sciences (SGGW), where my research focused on the impacts of climate change on water resources. My academic journey has taken me from a Bachelor's degree in Water Engineering at Tabriz University to a Master's degree in Water Resources Engineering from the University of Tehran, culminating in my current PhD work where I am exploring the complexities of droughts and water management under changing climatic conditions. Throughout my academic and professional career, I have been fortunate to engage in research collaborations with renowned institutions such as the Research Institute for Geo-Hydrological Protection in Italy, the Potsdam Institute for Climate Impact Research in Germany, and the Helmholtz Centre for Environmental Research. These experiences have enriched my understanding of global water resource challenges and enhanced my ability to contribute meaningfully to the field.</p>
+                    </div>
+                </section>
+
+                <!-- Research Section -->
+                <section id="research">
+                    <div class="container">
+                        <h2>Research Interests</h2>
+                        <p>My research is primarily focused on developing and applying innovative methodologies to assess the impacts of climate change on water resources, particularly in relation to long-term surface and subsurface water storage, flood and drought occurrences, ecosystem health, and agricultural productivity. I am passionate about integrating cutting-edge modeling techniques with advanced observational data to create comprehensive models that can predict and mitigate the adverse environmental effects of climate change.</p>
+                        <p>One of my key research areas is the enhancement of hydrological models by incorporating sustainable technologies and local practices. I aim to improve the accuracy and efficiency of these models to better inform water resource management strategies. Additionally, I am deeply interested in exploring the socio-economic implications of water resource management, striving to work collaboratively with stakeholders to design and implement adaptive strategies that ensure water security and sustainability in the face of evolving climatic conditions.</p>
+                        <p>My work involves the use of advanced computational tools and techniques, including the Soil and Water Assessment Tool (SWAT), SWAT-MODFLOW, and various data-driven methods in water science such as Artificial Neural Networks (ANN) and Support Vector Machines (SVM). My ultimate goal is to contribute to the development of robust, adaptable, and sustainable water management systems that can withstand the challenges posed by climate change.</p>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education">
+                    <div class="container">
+                        <h2>Education</h2>
                         <ul>
-                        <li>I am Mohammad Reza Eini, a dedicated and innovative researcher specializing in Environmental Engineering, with a focus on hydrology, meteorology, and water management. I recently completed my PhD at the Warsaw University of Life Sciences (SGGW), where my research focused on the impacts of climate change on water resources. My academic journey has taken me from a Bachelor's degree in Water Engineering at Tabriz University to a Master's degree in Water Resources Engineering from the University of Tehran, culminating in my current PhD work where I am exploring the complexities of droughts and water management under changing climatic conditions. Throughout my academic and professional career, I have been fortunate to engage in research collaborations with renowned institutions such as the Research Institute for Geo-Hydrological Protection in Italy, the Potsdam Institute for Climate Impact Research in Germany, and the Helmholtz Centre for Environmental Research. These experiences have enriched my understanding of global water resource challenges and enhanced my ability to contribute meaningfully to the field.</li>
+                            <li>
+                                <h3>PhD in Environmental Engineering, Mining, and Energy</h3>
+                                <p>Warsaw University of Life Sciences – SGGW (2020 - 2024)</p>
+                                <p><strong>Thesis:</strong> Enhancing the accuracy of process-based and data-driven models for predicting drought</p>
+                            </li>
+                            <li>
+                                <h3>M.Sc. in Water Resources Engineering</h3>
+                                <p>University of Tehran- College of Aburaihan (2015 - 2017)</p>
+                                <p><strong>Thesis:</strong> Development of comprehensive karstic watershed model to estimate and precise the components of the water balance</p>
+                            </li>
+                            <li>
+                                <h3>B.Sc. in Water Engineering</h3>
+                                <p>University of Tabriz- Department of Water Engineering (2011 - 2015)</p>
+                            </li>
                         </ul>
                     </div>
                 </section>
 
-            <section id="research">
-                <div class="container">
-                    <h2>Research Interests</h2>
-                    <ul>
-                    <li>My research is primarily focused on developing and applying innovative methodologies to assess the impacts of climate change on water resources, particularly in relation to long-term surface and subsurface water storage, flood and drought occurrences, ecosystem health, and agricultural productivity. I am passionate about integrating cutting-edge modeling techniques with advanced observational data to create comprehensive models that can predict and mitigate the adverse environmental effects of climate change.One of my key research areas is the enhancement of hydrological models by incorporating sustainable technologies and local practices. I aim to improve the accuracy and efficiency of these models to better inform water resource management strategies. Additionally, I am deeply interested in exploring the socio-economic implications of water resource management, striving to work collaboratively with stakeholders to design and implement adaptive strategies that ensure water security and sustainability in the face of evolving climatic conditions.My work involves the use of advanced computational tools and techniques, including the Soil and Water Assessment Tool (SWAT), SWAT-MODFLOW, and various data-driven methods in water science such as Artificial Neural Networks (ANN) and Support Vector Machines (SVM). My ultimate goal is to contribute to the development of robust, adaptable, and sustainable water management systems that can withstand the challenges posed by climate change.</li>
-                    </ul>
-                </div>
-            </section>
+                <!-- Fellowships Section -->
+                <section id="fellowships">
+                    <div class="container">
+                        <h2>Fellowships</h2>
+                        <ul>
+                            <li>Research Institute for Geo-Hydrological Protection, National Research Council of Italy – IRPI-CNR Perugia, Italy (Spring and Summer 2022)</li>
+                            <li>Potsdam Institute for Climate Impact Research – PIK, Potsdam, Germany (Spring and Summer 2023)</li>
+                            <li>Helmholtz Centre for Environmental Research – UFZ, Leipzig, Germany (Fall 2023)</li>
+                        </ul>
+                    </div>
+                </section>
 
-            <section id="education">
-                <div class="container">
-                    <h2>Education</h2>
-                    <ul>
-                        <li>
-                            <h3>PhD in Environmental Engineering, Mining, and Energy</h3>
-                            <p>Warsaw University of Life Sciences – SGGW (2020 - 2024)</p>
-                            <p><strong>Thesis:</strong> Enhancing the accuracy of process-based and data-driven models for predicting drought</p>
-                        </li>
-                        <li>
-                            <h3>M.Sc. in Water Resources Engineering</h3>
-                            <p>University of Tehran- College of Aburaihan (2015 - 2017)</p>
-                            <p><strong>Thesis:</strong> Development of comprehensive karstic watershed model to estimate and precise the components of the water balance</p>
-                        </li>
-                        <li>
-                            <h3>B.Sc. in Water Engineering</h3>
-                            <p>University of Tabriz- Department of Water Engineering (2011 - 2015)</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                <!-- Publications Section -->
+                <section id="publications">
+                    <div class="container">
+                        <h2>Publications</h2>
+                        <ol reversed>
+                            <li>Ghezelayagh P., <strong>Eini M. R.</strong>, Grygoruk M. (2025). Assessing carbon accumulation through peat vertical displacement: The influence of climate and land use across diverse peatland characteristics <em><strong>Science of The Total Environment</strong></em>, 958, 178132.</li>
+                            <li>Khaledi-Alamdari, M., Fakheri-Fard, A., Majnooni-Heris, A., <strong>Eini M. R.</strong> (2024). Analyzing the impact of climatic conditions on rainfed wheat yield in northwest Iran: a parametric and nonparametric approach <em><strong>Journal of Water and Climate Change</strong></em>, jwc2024519.</li>
+                            <li>Ghezelayagh P., Oleszczuk R., Stachowicz M., <strong>Eini M. R.</strong>, Kamocki A., Banaszuk P., Grygoruk M. (2024). Developing a remote-sensing-based indicator for peat soil vertical displacement. A case study in the Biebrza Valley, Poland. <em><strong>Ecological Indicators</strong></em>, 166:112305.</li>
+                            <li>Delavar M., Raeisi L., <strong>Eini M. R.</strong>, Morid S., Mohammadi H., & Abbasi H. (2024). Assessing the Effectiveness of Water-Saving Plans at the Farm and Basin Level Using Agrohydrological Modeling and Water-Accounting Approaches. <em><strong>Journal of Irrigation and Drainage Engineering</strong></em>, 150(4), 04024009.</li>
+                            <li><strong>Eini M. R.</strong>, Rahmati Ziveh A., Salmani H., Mujahid S., Ghezelayagh P., & Piniewski M. (2023). Detecting drought events over a region in Central Europe using a regional and two satellite-based precipitation datasets. <em><strong>Agricultural and Forest Meteorology</strong></em>, 342, 109733.</li>
+                            <li><strong>Eini M. R.</strong>, Najminejad F., & Piniewski M. (2023). Direct and indirect simulating and projecting hydrological drought using a supervised machine learning method. <em><strong>Science of The Total Environment</strong></em>, 165523.</li>
+                            <li>Szyga-Pluta K., Tomczyk A. M., Piniewski M., & <strong>Eini M. R.</strong> (2023). Past and future changes in the start, end, and duration of the growing season in Poland. <em><strong>Acta Geophysica</strong></em>, 1-15.</li>
+                            <li><strong>Eini M. R.</strong>, Massari C., & Piniewski M. (2023). Satellite-based soil moisture could enhance the reliability of agro-hydrological modeling in large transboundary river basins. <em><strong>Science of The Total Environment</strong></em>, 162396.</li>
+                            <li>Salmani H., Javadi S., <strong>Eini M. R.</strong>, & Golmohammadi G. (2023). Compilation simulation of surface water & groundwater resources using the SWAT-MODFLOW model for karstic basin. <em><strong>Hydrogeology Journal</strong></em>.</li>
+                            <li><strong>Eini M. R.</strong>, Motehayeri S. M. S., Rahmati A., & Piniewski M. (2023). Evaluation of the accuracy of satellite-based rainfed wheat yield dataset over an area with complex geography. <em><strong>Journal of Arid Environments</strong></em>, 212, 104963.</li>
+                            <li><strong>Eini M. R.</strong>, Salmani H., and Piniewski M. (2023). Comparison of process-based and statistical approaches for simulation and projections of rainfed crop yields. <em><strong>Agricultural Water Management</strong></em>, 277, 108107.</li>
+                            <li>Piniewski M., <strong>Eini M. R.</strong>, Chattopadhyay S., Okruszko T., and Kundzewicz Z.W. (2022). Is there a coherence in observed and projected changes in riverine low flow indices across Central Europe?. <em><strong>Earth-Science Reviews</strong></em>, 104187.</li>
+                            <li><strong>Eini M. R.</strong>, Rahmati A., Salmani H., Brocca L., and Piniewski M. (2022). Detecting characteristics of extreme precipitation events using regional and satellite-based precipitation gridded datasets over a region in Central Europe. <em><strong>Science of The Total Environment</strong></em>, 158497.</li>
+                            <li>Delavar M., <strong>Eini M. R.</strong>, Kuchak V. S., Zaghiyan M. R., Shahbazi A., Nourmohammadi F., and Motamedi A. (2022). Model-based water accounting for integrated assessment of water resources systems at the basin scale. <em><strong>Science of the Total Environment</strong></em>, 830, 154810.</li>
+                            <li><strong>Eini M. R.</strong>, Rahmati A., and Piniewski M. (2022). Hydrological application and accuracy evaluation of PERSIANN satellite-based precipitation estimates over a humid continental climate catchment. <em><strong>Journal of Hydrology: Regional Studies</strong></em>, 41, 101109.</li>
+                            <li>Tomczyk A. M., Piniewski M., <strong>Eini M. R.</strong>, and Bednorz E. (2022). Projections of changes in maximum air temperature and hot days in Poland. <em><strong>International Journal of Climatology</strong></em>, 42(10), 5242–5254.</li>
+                            <li><strong>Eini M. R.</strong>, Olyaei M.A., Kamyab T., Teymoori J., Brocca L., and Piniewski M. (2021). Evaluating three non-gauge-corrected satellite precipitation estimates by a regional gauge interpolated dataset over Iran. <em><strong>Journal of Hydrology: Regional Studies</strong></em>, 38, 100942.</li>
+                            <li><strong>Eini M. R.</strong>, Javadi S., Hashemy Shahdany M., and Kisi O. (2020). Comprehensive assessment and scenario simulation for future of the hydrological processes in Dez river basin, Iran. <em><strong>Water Supply</strong></em>.</li>
+                            <li><strong>Eini M. R.</strong>, Javadi S., Delavar M., Gassman P.W., and Jarihani B. (2020). Development of alternative SWAT-based models for simulating water budget components and streamflow for a karstic-influenced watershed. <em><strong>Catena</strong></em>, 195, 104801.</li>
+                            <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar J. A. F., Monteiro, and M. Darand (2019). High accuracy of precipitation reanalyses resulted in good river discharge simulations in a semi-arid basin. <em><strong>Ecological Engineering</strong></em>, 131, 107-119.</li>
+                            <li><strong>Eini M. R.</strong> (2019). Discussion of “Intra- and interannual streamflow variations of Wardha watershed under changing climate” (2018) by Naga Sowjanya, P Venkata Reddy K., & Shashi M. <em><strong>ISH Journal of Hydraulic Engineering</strong></em>, DOI: 10.1080/09715010.2018.1473057.</li>
+                            <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar (2018). Evaluating the performance of CRU and NCEP CFSR global reanalysis climate datasets in hydrological simulation by SWAT model, Case Study: Maharlu basin. <em><strong>WATER RESOURCES RESEARCH</strong></em>, 14(1), 32-44. (In Persian).</li>
+                            <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar, and M. Darand (2018). Assessment of Asfezari national database precipitation data in runoff evaluating and monitoring regional drought. <em><strong>Iranian Journal of EcoHydrology</strong></em>, (5)1, 95-110. (In Persian).</li>
+                            <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar (2019). Development of Comprehensive Karstic Watershed Model in Order to Estimate and Precise the Components of the Water Balance. <em><strong>IRAN-WATER RESOURCES RESEARCH</strong></em>, 14(5), 133-145. (In Persian).</li>
+                            <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar, and M. Darand (2019). Recognition of accuracy of PERSIANN-CDR precipitation satellite database in simulation of runoff in SWAT model on Maharlu Basin. <em><strong>Journal of Physical Geography Research Quarterly</strong></em>. (In Persian).</li>
+                        </ol>
+                    </div>
+                </section>
 
-            <section id="fellowships">
-                <div class="container">
-                    <h2>Fellowships</h2>
-                    <ul>
-                        <li>Research Institute for Geo-Hydrological Protection, National Research Council of Italy – IRPI-CNR Perugia, Italy (Spring and Summer 2022)</li>
-                        <li>Potsdam Institute for Climate Impact Research – PIK, Potsdam, Germany (Spring and Summer 2023)</li>
-                        <li>Helmholtz Centre for Environmental Research – UFZ, Leipzig, Germany (Fall 2023)</li>
-                    </ul>
-                </div>
-            </section>
+                <!-- Co-authors Section -->
+                <section id="co-authors">
+                    <div class="container">
+                        <h2>Top Co-Authors</h2>
+                        <ul>
+                            <li>Dr. Mikolaj Piniewski, Warsaw University of Life Sciences</li>
+                            <li>Dr. Majid Delavar, Tarbiat Modares University</li>
+                            <li>Dr. Saman Javadi, University of Tehran</li>
+                            <li>Dr. Luca Brocca, National Research Council of Italy</li>
+                            <li>Dr. Mohammad Darand, University of Kurdistan</li>
+                            <li>Akbar Rahmati, Czech University of Life Sciences Prague</li>
+                            <li>Haniyeh Salmani, Universidad de Salamanca</li>
+                        </ul>
+                    </div>
+                </section>
 
-            <section id="publications">
-                <div class="container">
-                    <h2>Publications</h2>
-                    <ol reversed>
-                        <li>Ghezelayagh P., <strong>Eini M. R.</strong>, Grygoruk M. (2025). Assessing carbon accumulation through peat vertical displacement: The influence of climate and land use across diverse peatland characteristics <em><strong>Science of The Total Environment</strong></em>, 958, 178132.</li>
-                        <li>Khaledi-Alamdari, M., Fakheri-Fard, A., Majnooni-Heris, A., <strong>Eini M. R.</strong> (2024). Analyzing the impact of climatic conditions on rainfed wheat yield in northwest Iran: a parametric and nonparametric approach <em><strong>Journal of Water and Climate Change</strong></em>, jwc2024519.</li>
-                        <li>Ghezelayagh P., Oleszczuk R., Stachowicz M., <strong>Eini M. R.</strong>, Kamocki A., Banaszuk P., Grygoruk M. (2024). Developing a remote-sensing-based indicator for peat soil vertical displacement. A case study in the Biebrza Valley, Poland. <em><strong>Ecological Indicators</strong></em>, 166:112305.</li>
-                        <li>Delavar M., Raeisi L., <strong>Eini M. R.</strong>, Morid S., Mohammadi H., & Abbasi H. (2024). Assessing the Effectiveness of Water-Saving Plans at the Farm and Basin Level Using Agrohydrological Modeling and Water-Accounting Approaches. <em><strong>Journal of Irrigation and Drainage Engineering</strong></em>, 150(4), 04024009.</li>
-                        <li><strong>Eini M. R.</strong>, Rahmati Ziveh A., Salmani H., Mujahid S., Ghezelayagh P., & Piniewski M. (2023). Detecting drought events over a region in Central Europe using a regional and two satellite-based precipitation datasets. <em><strong>Agricultural and Forest Meteorology</strong></em>, 342, 109733.</li>
-                        <li><strong>Eini M. R.</strong>, Najminejad F., & Piniewski M. (2023). Direct and indirect simulating and projecting hydrological drought using a supervised machine learning method. <em><strong>Science of The Total Environment</strong></em>, 165523.</li>
-                        <li>Szyga-Pluta K., Tomczyk A. M., Piniewski M., & <strong>Eini M. R.</strong> (2023). Past and future changes in the start, end, and duration of the growing season in Poland. <em><strong>Acta Geophysica</strong></em>, 1-15.</li>
-                        <li><strong>Eini M. R.</strong>, Massari C., & Piniewski M. (2023). Satellite-based soil moisture could enhance the reliability of agro-hydrological modeling in large transboundary river basins. <em><strong>Science of The Total Environment</strong></em>, 162396.</li>
-                        <li>Salmani H., Javadi S., <strong>Eini M. R.</strong>, & Golmohammadi G. (2023). Compilation simulation of surface water & groundwater resources using the SWAT-MODFLOW model for karstic basin. <em><strong>Hydrogeology Journal</strong></em>.</li>
-                        <li><strong>Eini M. R.</strong>, Motehayeri S. M. S., Rahmati A., & Piniewski M. (2023). Evaluation of the accuracy of satellite-based rainfed wheat yield dataset over an area with complex geography. <em><strong>Journal of Arid Environments</strong></em>, 212, 104963.</li>
-                        <li><strong>Eini M. R.</strong>, Salmani H., and Piniewski M. (2023). Comparison of process-based and statistical approaches for simulation and projections of rainfed crop yields. <em><strong>Agricultural Water Management</strong></em>, 277, 108107.</li>
-                        <li>Piniewski M., <strong>Eini M. R.</strong>, Chattopadhyay S., Okruszko T., and Kundzewicz Z.W. (2022). Is there a coherence in observed and projected changes in riverine low flow indices across Central Europe?. <em><strong>Earth-Science Reviews</strong></em>, 104187.</li>
-                        <li><strong>Eini M. R.</strong>, Rahmati A., Salmani H., Brocca L., and Piniewski M. (2022). Detecting characteristics of extreme precipitation events using regional and satellite-based precipitation gridded datasets over a region in Central Europe. <em><strong>Science of The Total Environment</strong></em>, 158497.</li>
-                        <li>Delavar M., <strong>Eini M. R.</strong>, Kuchak V. S., Zaghiyan M. R., Shahbazi A., Nourmohammadi F., and Motamedi A. (2022). Model-based water accounting for integrated assessment of water resources systems at the basin scale. <em><strong>Science of the Total Environment</strong></em>, 830, 154810.</li>
-                        <li><strong>Eini M. R.</strong>, Rahmati A., and Piniewski M. (2022). Hydrological application and accuracy evaluation of PERSIANN satellite-based precipitation estimates over a humid continental climate catchment. <em><strong>Journal of Hydrology: Regional Studies</strong></em>, 41, 101109.</li>
-                        <li>Tomczyk A. M., Piniewski M., <strong>Eini M. R.</strong>, and Bednorz E. (2022). Projections of changes in maximum air temperature and hot days in Poland. <em><strong>International Journal of Climatology</strong></em>, 42(10), 5242–5254.</li>
-                        <li><strong>Eini M. R.</strong>, Olyaei M.A., Kamyab T., Teymoori J., Brocca L., and Piniewski M. (2021). Evaluating three non-gauge-corrected satellite precipitation estimates by a regional gauge interpolated dataset over Iran. <em><strong>Journal of Hydrology: Regional Studies</strong></em>, 38, 100942.</li>
-                        <li><strong>Eini M. R.</strong>, Javadi S., Hashemy Shahdany M., and Kisi O. (2020). Comprehensive assessment and scenario simulation for future of the hydrological processes in Dez river basin, Iran. <em><strong>Water Supply</strong></em>.</li>
-                        <li><strong>Eini M. R.</strong>, Javadi S., Delavar M., Gassman P.W., and Jarihani B. (2020). Development of alternative SWAT-based models for simulating water budget components and streamflow for a karstic-influenced watershed. <em><strong>Catena</strong></em>, 195, 104801.</li>
-                        <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar J. A. F., Monteiro, and M. Darand (2019). High accuracy of precipitation reanalyses resulted in good river discharge simulations in a semi-arid basin. <em><strong>Ecological Engineering</strong></em>, 131, 107-119.</li>
-                        <li><strong>Eini M. R.</strong> (2019). Discussion of “Intra- and interannual streamflow variations of Wardha watershed under changing climate” (2018) by Naga Sowjanya, P Venkata Reddy K., & Shashi M. <em><strong>ISH Journal of Hydraulic Engineering</strong></em>, DOI: 10.1080/09715010.2018.1473057.</li>
-                        <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar (2018). Evaluating the performance of CRU and NCEP CFSR global reanalysis climate datasets in hydrological simulation by SWAT model, Case Study: Maharlu basin. <em><strong>WATER RESOURCES RESEARCH</strong></em>, 14(1), 32-44. (In Persian).</li>
-                        <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar, and M. Darand (2018). Assessment of Asfezari national database precipitation data in runoff evaluating and monitoring regional drought. <em><strong>Iranian Journal of EcoHydrology</strong></em>, (5)1, 95-110. (In Persian).</li>
-                        <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar (2019). Development of Comprehensive Karstic Watershed Model in Order to Estimate and Precise the Components of the Water Balance. <em><strong>IRAN-WATER RESOURCES RESEARCH</strong></em>, 14(5), 133-145. (In Persian).</li>
-                        <li><strong>Eini M. R.</strong>, S. Javadi M., Delavar, and M. Darand (2019). Recognition of accuracy of PERSIANN-CDR precipitation satellite database in simulation of runoff in SWAT model on Maharlu Basin. <em><strong>Journal of Physical Geography Research Quarterly</strong></em>. (In Persian).</li>
-                    </ol>
-                </div>
-            </section>
+                <!-- Projects Section -->
+                <section id="projects">
+                    <div class="container">
+                        <h2>Current Projects</h2>
+                        <ul>
+                            <li>Adaptive Water Accounting for Sustainable Management of Central European Transboundary River Basins (AWA)</li>
+                            <li>Dry Nexus: Pioneering Hybrid Modeling with AI, Process-based Models, and Satellites (DryAPS)</li>
+                            <li>Integrated modeling of hydrological and agricultural aspects of droughts in Odra river basin under a changing climate (2020-2024)</li>
+                        </ul>
+                    </div>
+                </section>
 
-            <section id="co-authors">
-                <div class="container">
-                    <h2>Top Co-Authors</h2>
-                    <ul>
-                        <li>Dr. Mikolaj Piniewski, Warsaw University of Life Sciences</li>
-                        <li>Dr. Majid Delavar, Tarbiat Modares University</li>
-                        <li>Dr. Saman Javadi, University of Tehran</li>
-                        <li>Dr. Luca Brocca, National Research Council of Italy</li>
-                        <li>Dr. Mohammad Darand, University of Kurdistan</li>
-                        <li>    Akbar Rahmati, Czech University of Life Sciences Prague</li>
-                        <li>    Haniyeh Salmani, Universidad de Salamanca</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="projects">
-                <div class="container">
-                    <h2>Current Projects</h2>
-                    <ul>
-                        <li>Adaptive Water Accounting for Sustainable Management of Central European Transboundary River Basins (AWA)</li>
-                        <li>Dry Nexus: Pioneering Hybrid Modeling with AI, Process-based Models, and Satellites (DryAPS)</li>
-                        <li>Integrated modeling of hydrological and agricultural aspects of droughts in Odra river basin under a changing climate (2020-2024)</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="teaching">
-                <div class="container">
-                    <h2>Teaching Experience</h2>
-                    <ul>
-                        <li><strong>Warsaw University of Life Sciences</strong> (2020-present): Climate Change and Water Resources (Master and Bachelor in Civil and Environmental Engineering)</li>
-                        <li><strong>Ale-Taha University, Tehran, Iran</strong> (2017-2020): Advanced Engineering Hydrology, Mathematical Models in Hydrology, Groundwater Hydrology, Applied Hydrology (Master of Civil Engineering Water Resources)</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section id="skills">
-                <div class="container">
-                    <h2>Technical Skills</h2>
-                    <div class="skill">
-                        <h3>Modeling</h3>
-                        <div class="skill-bar">
-                            <span data-percent="90">Process-based and data-driven models</span>
+                <!-- Teaching Experience Section -->
+                <section id="teaching">
+                    <div class="container">
+                        <h2>Teaching Experience</h2>
+                        <ul>
+                            <li><strong>Warsaw University of Life Sciences</strong> (2020-present): Climate Change and Water Resources (Master and Bachelor in Civil and Environmental Engineering)</li>
+                            <li><strong>Ale-Taha University, Tehran, Iran</strong> (2017-2020): Advanced Engineering Hydrology, Mathematical Models in Hydrology, Groundwater Hydrology, Applied Hydrology (Master of Civil Engineering Water Resources)</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Skills Section -->
+                <section id="skills">
+                    <div class="container">
+                        <h2>Technical Skills</h2>
+                        <div class="skill">
+                            <h3>Modeling</h3>
+                            <div class="skill-bar">
+                                <span data-percent="90">Process-based and data-driven models</span>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h3>Computing Languages</h3>
+                            <div class="skill-bar">
+                                <span data-percent="70">R, Fortran, Python</span>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h3>Applications</h3>
+                            <div class="skill-bar">
+                                <span data-percent="85">ArcGIS, QGIS</span>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h3>Scientific Writing</h3>
+                            <div class="skill-bar">
+                                <span data-percent="90">Scientific papers and projects</span>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h3>Data Management</h3>
+                            <div class="skill-bar">
+                                <span data-percent="80">Data management</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill">
-                        <h3>Computing Languages</h3>
-                        <div class="skill-bar">
-                            <span data-percent="70">R, Fortran, Python</span>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h3>Applications</h3>
-                        <div class="skill-bar">
-                            <span data-percent="85">ArcGIS, QGIS</span>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h3>Scientific Writing</h3>
-                        <div class="skill-bar">
-                            <span data-percent="90">Scientific papers and projects</span>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h3>Data Management</h3>
-                        <div class="skill-bar">
-                            <span data-percent="80">Data management</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <button id="scrollToTopBtn" title="Go to top">Top</button>
-<style>
-    #scrollToTopBtn {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed position */
-        bottom: 20px; /* Place the button at the bottom */
-        right: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap */
-        font-size: 18px; /* Increase font size */
-        background-color: #555; /* Dark background */
-        color: white; /* White text */
-        border: none; /* Remove borders */
-        cursor: pointer; /* Add a pointer on hover */
-        padding: 15px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-    }
+                <!-- Scroll To Top Button -->
+                <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+            </main>
+        </div>
+    </div>
 
-    #scrollToTopBtn:hover {
-        background-color: #333; /* Darker background on hover */
-    }
-</style>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mohammad Reza Eini | <a href="mailto:mohammad.eini.ut@gmail.com">Contact Me</a></p>
+        </div>
+    </footer>
 
-<script>
-    // Get the button
-    let mybutton = document.getElementById("scrollToTopBtn");
+    <!-- JavaScript for Modal -->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
 
-    // Show the button when the user scrolls down 20px from the top
-    window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
         }
-    };
 
-    // Scroll to the top of the page when the button is clicked
-    mybutton.onclick = function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-</script>
-<canvas id="backgroundCanvas"></canvas>
-
-<style>
-    #backgroundCanvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* Behind the content */
-        pointer-events: none; /* No interaction with the canvas */
-    }
-</style>
-
-<script>
-    const canvas = document.getElementById('backgroundCanvas');
-    const ctx = canvas.getContext('2d');
-
-    // Resize the canvas to fill the window
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
-
-    // Example of simple particle animation
-    let particlesArray = [];
-
-    function initParticles() {
-        particlesArray = [];
-        for (let i = 0; i < 100; i++) {
-            let size = Math.random() * 5 + 1;
-            let x = Math.random() * (innerWidth - size * 2);
-            let y = Math.random() * (innerHeight - size * 2);
-            let dx = (Math.random() - 0.5) * 2;
-            let dy = (Math.random() - 0.5) * 2;
-            particlesArray.push({ x, y, dx, dy, size });
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
         }
-    }
 
-    function animateParticles() {
-        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
-        particlesArray.forEach(p => {
-            p.x += p.dx;
-            p.y += p.dy;
+    <!-- JavaScript for Scroll To Top Button -->
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("scrollToTopBtn");
 
-            if (p.x + p.size > innerWidth || p.x - p.size < 0) p.dx = -p.dx;
-            if (p.y + p.size > innerHeight || p.y - p.size < 0) p.dy = -p.dy;
+        // Show the button when the user scrolls down 300px from the top
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
 
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-            ctx.fill();
-            ctx.closePath();
+        // Scroll to the top of the page when the button is clicked
+        mybutton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+
+    <!-- JavaScript for Skills Animation -->
+    <script>
+        window.addEventListener('load', () => {
+            const skillBars = document.querySelectorAll('.skill-bar span');
+            skillBars.forEach(bar => {
+                const percent = bar.getAttribute('data-percent');
+                bar.style.width = percent + '%';
+            });
         });
+    </script>
 
-        requestAnimationFrame(animateParticles);
-    }
+    <!-- JavaScript for Background Canvas Animation -->
+    <script>
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
 
-    initParticles();
-    animateParticles();
-</script>
+        // Resize the canvas to fill the window
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
 
+        resizeCanvas();
 
+        window.addEventListener('resize', resizeCanvas);
 
+        // Particle Class
+        class Particle {
+            constructor(x, y, dx, dy, size, color) {
+                this.x = x;
+                this.y = y;
+                this.dx = dx;
+                this.dy = dy;
+                this.size = size;
+                this.color = color;
+            }
 
-        </main>
-    </div>
-</div>
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
 
-<footer>
-    <div class="container">
-        <p>&copy; 2024 Mohammad Reza Eini | <a href="mailto:mohammad.eini.ut@gmail.com">Contact Me</a></p>
-    </div>
-</footer>
+            update() {
+                if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                    this.dx = -this.dx;
+                }
 
-    <script src="script.js"></script>
+                if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                    this.dy = -this.dy;
+                }
+
+                this.x += this.dx;
+                this.y += this.dy;
+
+                this.draw();
+            }
+        }
+
+        // Initialize Particles
+        let particlesArray = [];
+        const colors = ['rgba(26, 188, 156, 0.8)', 'rgba(52, 152, 219, 0.8)', 'rgba(155, 89, 182, 0.8)'];
+
+        function initParticles() {
+            particlesArray = [];
+            const numberOfParticles = (canvas.width * canvas.height) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = Math.random() * 3 + 1;
+                let x = Math.random() * (canvas.width - size * 2) + size;
+                let y = Math.random() * (canvas.height - size * 2) + size;
+                let dx = (Math.random() - 0.5) * 1;
+                let dy = (Math.random() - 0.5) * 1;
+                let color = colors[Math.floor(Math.random() * colors.length)];
+                particlesArray.push(new Particle(x, y, dx, dy, size, color));
+            }
+        }
+
+        // Animate Particles
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach(particle => particle.update());
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+    </script>
 </body>
 </html>
