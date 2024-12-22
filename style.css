@@ -551,48 +551,209 @@ footer a:hover {
 /* ============================
    Responsive Design for Smaller Screens
    ============================ */
+/* Base styles remain the same until mobile breakpoints */
+/* ... Previous styles up to media queries ... */
+
+/* ============================
+   Enhanced Mobile Responsive Design
+   ============================ */
 @media screen and (max-width: 768px) {
-    .page-container {
-        flex-direction: column; /* Stack columns vertically */
-        align-items: center; /* Center align columns */
+    /* Header adjustments */
+    header {
+        padding: 15px 0;
+        position: relative; /* Change to relative to prevent overlap */
     }
 
-    .left-column, .main-container {
-        max-width: 100%; /* Full width on small screens */
-        margin: 10px 0; /* Space around columns */
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    /* Navbar mobile optimization */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Start off-screen */
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        background-color: #34495e;
+        transition: left 0.3s ease-in-out;
+        overflow-y: auto;
+        z-index: 2000;
+    }
+
+    .navbar.active {
+        left: 0; /* Slide in from left */
     }
 
     .navbar ul {
-        flex-direction: column; /* Stack navbar items vertically */
-        width: 100%; /* Full width */
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 60px; /* Space for hamburger */
     }
 
     .navbar li {
-        margin: 10px 0; /* Space between navbar items */
+        width: 100%;
+        margin: 10px 0;
     }
 
+    .navbar a {
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+    }
+
+    /* Hamburger menu improvements */
     .navbar .hamburger {
-        display: flex; /* Show hamburger on small screens */
-        position: absolute;
-        right: 20px;
+        display: flex;
+        position: fixed;
         top: 15px;
+        right: 15px;
+        z-index: 2001;
+        padding: 10px;
+        background-color: #34495e;
+        border-radius: 5px;
     }
 
-    /* Remove sticky positioning on mobile to prevent overlap */
-    .navbar {
-        position: relative;
+    /* Overlay for mobile menu */
+    .navbar-overlay {
+        display: none;
+        position: fixed;
         top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1999;
     }
 
-    /* Remove sticky positioning and adjust width for left-column on mobile */
-    .left-column {
-        position: static; /* Remove sticky positioning */
-        width: 100%; /* Full width */
+    .navbar-overlay.active {
+        display: block;
     }
 
-    /* Optional: Adjust top margin to accommodate fixed header */
+    /* Page container mobile adjustments */
     .page-container {
-        margin-top: 80px; /* Adjusted to fit fixed header */
+        margin: 20px auto;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    /* Left column mobile optimization */
+    .left-column {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Main container mobile optimization */
+    .main-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    /* Social links mobile optimization */
+    .social-links a {
+        padding: 12px 15px;
+        justify-content: center;
+    }
+
+    /* Publications mobile optimization */
+    #publications ol {
+        padding-left: 0;
+    }
+
+    #publications ol li {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    /* Skills section mobile optimization */
+    #skills .skill-bar {
+        height: 20px;
+    }
+
+    #skills .skill-bar span::after {
+        font-size: 0.8em;
+    }
+
+    /* Modal mobile optimization */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+
+    /* Scroll to top button mobile positioning */
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+        font-size: 1.2em;
+    }
+
+    /* Footer mobile optimization */
+    footer {
+        padding: 15px;
+        margin-top: 30px;
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .main-container section h2 {
+        font-size: 1.3em;
+    }
+
+    .navbar {
+        width: 90%;
+    }
+
+    #skills .skill-bar span::after {
+        font-size: 0.7em;
+    }
+}
+
+/* Touch device optimization */
+@media (hover: none) {
+    .navbar a:hover,
+    .social-links a:hover,
+    #publications ol li:hover,
+    #co-authors ul li:hover,
+    #projects ul li:hover,
+    #teaching ul li:hover {
+        transform: none;
+    }
+}
+
+/* Landscape orientation fixes */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .navbar {
+        overflow-y: scroll;
+    }
+
+    .navbar ul {
+        margin-top: 40px;
+    }
+
+    .modal-content {
+        margin: 5% auto;
     }
 }
 
