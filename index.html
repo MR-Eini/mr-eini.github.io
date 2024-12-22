@@ -79,27 +79,6 @@
         }
 
         /* ============================
-           Download CV Button Styling
-           ============================ */
-        .download-cv {
-            display: inline-block; /* Inline-block for padding and margin */
-            margin-top: 10px; /* Space above the button */
-            padding: 10px 20px; /* Comfortable padding */
-            background-color: #1abc9c; /* Vibrant teal color */
-            color: #fff; /* White text */
-            text-decoration: none; /* Remove underline */
-            border-radius: 25px; /* Fully rounded corners */
-            font-size: 0.9em; /* Slightly larger font */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .download-cv:hover {
-            background-color: #16a085; /* Darker teal on hover */
-            transform: translateY(-2px); /* Lift effect on hover */
-        }
-
-        /* ============================
            Navbar Styling
            ============================ */
         .navbar {
@@ -143,6 +122,60 @@
         .navbar a:hover {
             background-color: #1abc9c; /* Teal background on hover */
             color: #fff; /* White text on hover */
+        }
+
+        /* ============================
+           Hamburger Menu Styling
+           ============================ */
+        .navbar .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ecf0f1;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Toggle hamburger animation */
+        .navbar.active .hamburger div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .navbar.active .hamburger div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar.active .hamburger div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Responsive Navbar */
+        @media screen and (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column; /* Stack navbar items vertically */
+                display: none; /* Hidden by default */
+                width: 100%; /* Full width */
+            }
+
+            .navbar ul.active {
+                display: flex; /* Show when active */
+            }
+
+            .navbar li {
+                margin: 10px 0; /* Space between navbar items */
+            }
+
+            .navbar .hamburger {
+                display: flex; /* Show hamburger on small screens */
+                position: absolute;
+                right: 20px;
+                top: 15px;
+            }
         }
 
         /* ============================
@@ -532,10 +565,21 @@
 
             .navbar ul {
                 flex-direction: column; /* Stack navbar items vertically */
+                width: 100%; /* Full width */
             }
 
             .navbar li {
                 margin: 10px 0; /* Space between navbar items */
+            }
+
+            /* Hide navbar links initially */
+            .navbar ul {
+                display: none;
+            }
+
+            /* Show navbar links when active */
+            .navbar ul.active {
+                display: flex;
             }
         }
 
@@ -611,7 +655,13 @@
     
     <!-- Navigation -->
     <nav class="navbar">
-        <ul>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#education">Education</a></li>
@@ -948,12 +998,22 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+                
+                // If on mobile, close the navbar after clicking a link
+                const navbarLinks = document.getElementById('nav-links');
+                if (navbarLinks.classList.contains('active')) {
+                    navbarLinks.classList.remove('active');
+                    const navbar = document.querySelector('.navbar');
+                    navbar.classList.remove('active');
+                }
             });
         });
 
         // Wait for the DOM to fully load
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.querySelector('.navbar'); // Select the navbar element
+            const hamburger = document.getElementById('hamburger'); // Select the hamburger menu
+            const navLinks = document.getElementById('nav-links'); // Select the nav links
             let hideTimeout;
 
             // Function to hide the navbar
@@ -965,6 +1025,12 @@
             function showNavbar() {
                 navbar.classList.remove('hidden');
             }
+
+            // Toggle hamburger menu
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                navbar.classList.toggle('active');
+            });
 
             // Initially, set a timeout to hide the navbar after 2 seconds
             hideTimeout = setTimeout(hideNavbar, 2000);
@@ -1012,6 +1078,7 @@
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            initParticles(); // Reinitialize particles on resize
         }
 
         resizeCanvas();
@@ -1058,7 +1125,8 @@
 
         function initParticles() {
             particlesArray = [];
-            const numberOfParticles = (canvas.width * canvas.height) / 9000;
+            // Adjust number of particles based on screen size for performance
+            const numberOfParticles = Math.floor((canvas.width * canvas.height) / 20000); // Reduced density for mobile
             for (let i = 0; i < numberOfParticles; i++) {
                 let size = Math.random() * 3 + 1;
                 let x = Math.random() * (canvas.width - size * 2) + size;
