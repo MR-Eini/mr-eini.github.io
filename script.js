@@ -236,6 +236,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // mobile
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+    const overlay = document.querySelector('.navbar-overlay');
+
+        hamburger?.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        });
+
+        overlay?.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+        });
+    });
+    
     // Initialize Particles
     let particlesArray = [];
     const colorsParticles = ['rgba(26, 188, 156, 0.8)', 'rgba(52, 152, 219, 0.8)', 'rgba(155, 89, 182, 0.8)'];
