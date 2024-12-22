@@ -158,6 +158,23 @@ header p {
         right: 20px;
         top: 15px;
     }
+
+    /* Remove sticky positioning on mobile to prevent overlap */
+    .navbar {
+        position: relative;
+        top: 0;
+    }
+
+    /* Remove sticky positioning and adjust width for left-column on mobile */
+    .left-column {
+        position: static; /* Remove sticky positioning */
+        width: 100%; /* Full width */
+    }
+
+    /* Optional: Adjust top margin to accommodate fixed header */
+    .page-container {
+        margin-top: 80px; /* Adjusted to fit fixed header */
+    }
 }
 
 /* ============================
@@ -552,6 +569,30 @@ footer a:hover {
 
     .navbar li {
         margin: 10px 0; /* Space between navbar items */
+    }
+
+    .navbar .hamburger {
+        display: flex; /* Show hamburger on small screens */
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    /* Remove sticky positioning on mobile to prevent overlap */
+    .navbar {
+        position: relative;
+        top: 0;
+    }
+
+    /* Remove sticky positioning and adjust width for left-column on mobile */
+    .left-column {
+        position: static; /* Remove sticky positioning */
+        width: 100%; /* Full width */
+    }
+
+    /* Optional: Adjust top margin to accommodate fixed header */
+    .page-container {
+        margin-top: 80px; /* Adjusted to fit fixed header */
     }
 }
 
