@@ -107,6 +107,60 @@ header p {
 }
 
 /* ============================
+   Hamburger Menu Styling
+   ============================ */
+.navbar .hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #ecf0f1;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Toggle hamburger animation */
+.navbar.active .hamburger div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar.active .hamburger div:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar.active .hamburger div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Stack navbar items vertically */
+        display: none; /* Hidden by default */
+        width: 100%; /* Full width */
+    }
+
+    .navbar ul.active {
+        display: flex; /* Show when active */
+    }
+
+    .navbar li {
+        margin: 10px 0; /* Space between navbar items */
+    }
+
+    .navbar .hamburger {
+        display: flex; /* Show hamburger on small screens */
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+}
+
+/* ============================
    Page Container Styling
    ============================ */
 .page-container {
@@ -328,11 +382,12 @@ main section ul li {
     background-color: #ecf0f1; /* Light gray background */
     border-left: 5px solid #1abc9c; /* Teal left border for emphasis */
     border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth background transition */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
 #publications ol li:hover {
-    background-color: #d1f2eb; /* Slightly different shade on hover */
+    background-color: #d1f2eb; /* Light teal background on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* ============================
@@ -355,14 +410,15 @@ main section ul li {
     padding: 15px; /* Padding inside items */
     border-left: 5px solid #1abc9c; /* Teal left border */
     border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
 #fellowships ul li:hover,
 #co-authors ul li:hover,
 #projects ul li:hover,
 #teaching ul li:hover {
-    background-color: #d1f2eb; /* Slight color change on hover */
+    background-color: #d1f2eb; /* Light teal on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* ============================
@@ -434,6 +490,19 @@ main section ul li {
 }
 
 /* ============================
+   Background Canvas Styling
+   ============================ */
+#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind the content */
+    pointer-events: none; /* No interaction with the canvas */
+}
+
+/* ============================
    Footer Styling
    ============================ */
 footer {
@@ -478,6 +547,7 @@ footer a:hover {
 
     .navbar ul {
         flex-direction: column; /* Stack navbar items vertically */
+        width: 100%; /* Full width */
     }
 
     .navbar li {
