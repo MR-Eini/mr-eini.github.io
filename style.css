@@ -133,7 +133,7 @@ canvas#backgroundCanvas {
 }
 
 .portrait-card img {
-    width: 50px;      /* set exact size */
+    width: 200px;      /* set exact size */
     height: auto;      /* keep proportions */
     border-radius: 12px;
     object-fit: cover;
