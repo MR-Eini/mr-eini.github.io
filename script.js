@@ -1,115 +1,103 @@
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-const navLinks = document.getElementById('nav-links');
-const hamburger = document.getElementById('hamburger');
-const canvas = document.getElementById('backgroundCanvas');
-const ctx = canvas.getContext('2d');
-
-function setCanvasSize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-function bindSmoothScroll() {
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', event => {
+        anchor.addEventListener('click', e => {
             const href = anchor.getAttribute('href');
-            if (!href || href === '#') return;
-            event.preventDefault();
-            document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                target?.scrollIntoView({ behavior: 'smooth' });
             }
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.remove('active');
+            document.querySelector('.hamburger').classList.remove('active');
         });
     });
 }
 
-function bindScrollTop() {
+    // Mobile navigation toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     window.addEventListener('scroll', () => {
-        const shouldShow = document.documentElement.scrollTop > 300;
-        scrollToTopBtn.style.display = shouldShow ? 'inline-flex' : 'none';
+        if (document.documentElement.scrollTop > 300) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
     });
     scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-function bindMobileNav() {
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-}
 
-function animateSkills() {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.skill-bar span').forEach(bar => {
-                    const percent = bar.getAttribute('data-percent');
-                    requestAnimationFrame(() => (bar.style.width = `${percent}%`));
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
+    // Background particle canvas
+    const canvas = document.getElementById('backgroundCanvas');
+    const ctx = canvas.getContext('2d');
 
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) observer.observe(skillsSection);
-}
-
-class Particle {
-    constructor(x, y, dx, dy, size, color) {
-        this.x = x;
-        this.y = y;
-        this.dx = dx;
-        this.dy = dy;
-        this.size = size;
-        this.color = color;
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
     }
 
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.fill();
+    class Particle {
+        constructor(x, y, dx, dy, size, color) {
+            this.x = x;
+            this.y = y;
+            this.dx = dx;
+            this.dy = dy;
+            this.size = size;
+            this.color = color;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+        update() {
+            if (this.x + this.size > canvas.width || this.x - this.size < 0) this.dx *= -1;
+            if (this.y + this.size > canvas.height || this.y - this.size < 0) this.dy *= -1;
+            this.x += this.dx;
+            this.y += this.dy;
+            this.draw();
+        }
     }
 
-    update() {
-        if (this.x + this.size > canvas.width || this.x - this.size < 0) this.dx = -this.dx;
-        if (this.y + this.size > canvas.height || this.y - this.size < 0) this.dy = -this.dy;
-        this.x += this.dx;
-        this.y += this.dy;
-        this.draw();
+    let particlesArray = [];
+    const colors = ['rgba(52, 211, 153, 0.5)', 'rgba(14, 165, 233, 0.55)', 'rgba(255, 255, 255, 0.2)'];
+
+    function initParticles() {
+        particlesArray = [];
+        const numberOfParticles = Math.floor((canvas.width * canvas.height) / 22000);
+        for (let i = 0; i < numberOfParticles; i++) {
+            const size = Math.random() * 2 + 1;
+            const x = Math.random() * (canvas.width - size * 2) + size;
+            const y = Math.random() * (canvas.height - size * 2) + size;
+            const dx = (Math.random() - 0.5) * 0.7;
+            const dy = (Math.random() - 0.5) * 0.7;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            particlesArray.push(new Particle(x, y, dx, dy, size, color));
+        }
     }
-}
 
-let particles = [];
-const colors = ['rgba(34,211,238,0.6)', 'rgba(52,211,153,0.55)', 'rgba(99,102,241,0.4)'];
-
-function initParticles() {
-    particles = [];
-    const count = Math.floor((canvas.width * canvas.height) / 22000);
-    for (let i = 0; i < count; i++) {
-        const size = Math.random() * 3 + 1;
-        const x = Math.random() * (canvas.width - size * 2) + size;
-        const y = Math.random() * (canvas.height - size * 2) + size;
-        const dx = (Math.random() - 0.5) * 0.8;
-        const dy = (Math.random() - 0.5) * 0.8;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        particles.push(new Particle(x, y, dx, dy, size, color));
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(particle => particle.update());
+        requestAnimationFrame(animateParticles);
     }
-}
 
-function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => p.update());
-    requestAnimationFrame(animateParticles);
-}
-
-function init() {
-    setCanvasSize();
-    bindSmoothScroll();
-    bindScrollTop();
-    bindMobileNav();
-    animateSkills();
-    initParticles();
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
     animateParticles();
     window.addEventListener('resize', () => {
         setCanvasSize();

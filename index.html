@@ -1,198 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohammad Reza Eini | Hydrology & Water Resources</title>
-    <meta name="description" content="Mohammad Reza Eini - Hydrology and Environmental Engineering professional with expertise in climate change, water resources, modeling, and remote sensing." />
-    <meta property="og:title" content="Mohammad Reza Eini - Hydrology & Environmental Engineering" />
-    <meta property="og:image" content="https://i1.rgstatic.net/ii/profile.image/11431281086928462-1664436009981_Q512/Mohammad-Reza-Eini.jpg" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcIhZ0W3qZ9gIKWk0W7C3qk7gF7kg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Reza Eini - Hydrology | Environmental Engineering</title>
+
+    <meta name="description" content="Mohammad Reza Eini - Assistant Professor in Environmental Engineering specializing in Hydrology, Water Resources, SWAT, and Climate Change Research. Explore research, publications, and projects.">
+    <meta name="keywords" content="Mohammad Reza Eini, Hydrology, Environmental Engineering, Climate Change, Water Resources, Research, Publications">
+    <meta name="author" content="Mohammad Reza Eini">
+
+    <meta property="og:title" content="Mohammad Reza Eini - Hydrology | Environmental Engineering">
+    <meta property="og:description" content="Explore the research, publications, and projects of Mohammad Reza Eini, Assistant Professor specializing in Environmental Engineering and Hydrology.">
+    <meta property="og:image" content="https://i1.rgstatic.net/ii/profile.image/11431281086928462-1664436009981_Q512/Mohammad-Reza-Eini.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohammad Reza Eini - Hydrology | Environmental Engineering">
+    <meta name="twitter:description" content="Explore the research, publications, and projects of Mohammad Reza Eini, Assistant Professor specializing in Environmental Engineering and Hydrology.">
+    <meta name="twitter:image" content="https://i1.rgstatic.net/ii/profile.image/11431281086928462-1664436009981_Q512/Mohammad-Reza-Eini.jpg">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-t6k3Un7X1Xo95Yb+4X4q5F/BjkAex5+isv+m7HkF0WySZyQ5BdwxmrYxezj3rW4lVDA3f7/7m1z93C9eQFq3mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="backgroundCanvas"></canvas>
 
-    <header>
-        <div class="hero">
-            <div>
+    <header class="hero">
+        <div class="hero__content container">
+            <div class="hero__text">
+                <p class="eyebrow">Hydrology &amp; Climate Resilience</p>
                 <h1>Mohammad Reza Eini</h1>
-                <p>Assistant Professor · Hydrology, Climate Risk & Water Resources Engineering</p>
+                <p class="subtitle">Assistant Professor, PhD Environmental Engineering | Warsaw University of Life Sciences</p>
+                <div class="hero__actions">
+                    <a class="btn primary" href="mailto:mohammad.eini.ut@gmail.com"><i class="fa-solid fa-envelope"></i> Contact</a>
+                    <a class="btn ghost" href="https://sggwpl-my.sharepoint.com/:w:/g/personal/p101727_sggw_edu_pl/ERVvOHQ2-XRPl_9ZLTvmwWQBLhzzEaw9GEcHGNCmbTCIkA?e=wQQIOg" target="_blank" rel="noopener">Download CV</a>
+                </div>
+                <div class="hero__highlights">
+                    <div class="chip"><i class="fa-solid fa-earth-europe"></i> Climate adaptation modeling</div>
+                    <div class="chip"><i class="fa-solid fa-water"></i> SWAT &amp; SWAT-MODFLOW</div>
+                    <div class="chip"><i class="fa-solid fa-satellite"></i> Remote sensing &amp; AI</div>
+                </div>
             </div>
-            <div class="hero-actions">
-                <a class="btn" href="mailto:mohammad.eini.ut@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
-                <a class="btn" href="https://sggwpl-my.sharepoint.com/:w:/g/personal/p101727_sggw_edu_pl/ERVvOHQ2-XRPl_9ZLTvmwWQBLhzzEaw9GEcHGNCmbTCIkA?e=wQQIOg" target="_blank" rel="noreferrer"><i class="fa-solid fa-file-arrow-down"></i>CV</a>
+            <div class="hero__portrait">
+                <div class="portrait-card">
+                    <img src="https://i1.rgstatic.net/ii/profile.image/11431281086928462-1664436009981_Q512/Mohammad-Reza-Eini.jpg" alt="Mohammad Reza Eini portrait">
+                    <div class="badge">Warsaw, Poland</div>
+                </div>
             </div>
         </div>
     </header>
 
     <nav class="navbar">
-        <div class="navbar-content">
-            <div class="hamburger" id="hamburger" aria-label="Toggle navigation" tabindex="0">
-                <span></span><span></span><span></span>
+        <div class="container nav-wrapper">
+            <div class="brand">M.R. Eini</div>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <ul id="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#fellowships">Fellowships</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#teaching">Teaching</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#references">References</a></li>
             </ul>
         </div>
     </nav>
+    <div class="navbar-overlay"></div>
 
-    <div class="layout">
-        <aside class="sidebar">
-            <img class="avatar" src="https://i1.rgstatic.net/ii/profile.image/11431281086928462-1664436009981_Q512/Mohammad-Reza-Eini.jpg" alt="Portrait of Mohammad Reza Eini" />
-            <h3>Mohammad Reza Eini, PhD</h3>
-            <p>Warsaw University of Life Sciences (SGGW)</p>
-            <p>Institute of Environmental Engineering</p>
-            <div class="social-links">
-                <a href="https://www.researchgate.net/profile/Mohammad_Reza_Eini" target="_blank" rel="noreferrer"><i class="fab fa-researchgate"></i>ResearchGate</a>
-                <a href="https://scholar.google.com/citations?user=8WN65OIAAAAJ&hl=en" target="_blank" rel="noreferrer"><i class="fa-solid fa-graduation-cap"></i>Google Scholar</a>
-                <a href="https://www.linkedin.com/in/MREini/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i>LinkedIn</a>
-                <a href="https://www.scopus.com/authid/detail.uri?authorId=57207841053" target="_blank" rel="noreferrer"><i class="fa-solid fa-book"></i>Scopus</a>
-                <a href="https://bw.sggw.edu.pl/info/author/WULS2d5423f309064ba0b1de52f4bb4901af/" target="_blank" rel="noreferrer"><i class="fa-solid fa-building-columns"></i>SGGW Profile</a>
-                <a href="https://github.com/MR-Eini" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i>GitHub</a>
+    <div class="layout container">
+        <aside class="profile-card">
+            <div class="profile-card__header">
+                <h2>Profile</h2>
+                <p>Integrating process-based modeling, remote sensing, and data-driven methods to safeguard water resources.</p>
+            </div>
+            <div class="profile-card__details">
+                <div class="detail"><i class="fa-solid fa-building-columns"></i> SGGW Institute of Environmental Engineering</div>
+                <div class="detail"><i class="fa-solid fa-location-dot"></i> Warsaw, Poland</div>
+                <div class="detail"><i class="fa-solid fa-award"></i> PhD with distinction</div>
+            </div>
+            <div class="profile-card__links">
+                <a href="https://www.researchgate.net/profile/Mohammad_Reza_Eini" target="_blank" rel="noopener"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                <a href="https://scholar.google.com/citations?user=8WN65OIAAAAJ&hl=en" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a href="https://www.linkedin.com/in/MREini/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=57207841053" target="_blank" rel="noopener"><i class="fas fa-book"></i> Scopus</a>
+                <a href="https://bw.sggw.edu.pl/info/author/WULS2d5423f309064ba0b1de52f4bb4901af/" target="_blank" rel="noopener"><i class="fas fa-school"></i> SGGW</a>
+                <a href="https://github.com/MR-Eini/" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <div class="profile-card__cta">
+                <p>Latest CV</p>
+                <a class="btn full" href="https://sggwpl-my.sharepoint.com/:w:/g/personal/p101727_sggw_edu_pl/ERVvOHQ2-XRPl_9ZLTvmwWQBLhzzEaw9GEcHGNCmbTCIkA?e=wQQIOg" target="_blank" rel="noopener">View &amp; Download</a>
             </div>
         </aside>
 
-        <main>
-            <section class="section" id="about">
-                <h2>About</h2>
-                <p>I am an environmental engineer and water resources specialist focused on protecting water security in a changing climate. My research blends process-based modeling (SWAT, SWAT-MODFLOW), machine learning, and satellite observations to deliver actionable drought and flood intelligence.</p>
-                <p>International collaborations across Italy, Germany, and Poland have shaped my approach to interdisciplinary, stakeholder-ready science. I enjoy translating technical insight into practical guidance for resilient, equitable water management.</p>
+        <main class="content">
+            <section id="about" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Overview</p>
+                    <h2>About Me</h2>
+                </div>
+                <p>I am Dr. Mohammad Reza Eini, an Environmental Engineer and Water Resources Specialist dedicated to ensuring global water security under changing climatic conditions. My academic pathway—from a Bachelor’s in Water Engineering at the University of Tabriz to a Master’s in Water Resources Engineering at the University of Tehran and a PhD with distinction at Warsaw University of Life Sciences (SGGW)—provides a multidisciplinary foundation in hydrology, climate science, and modeling.</p>
+                <p>During my PhD, I enhanced the accuracy of process-based and data-driven drought prediction models, delivering actionable strategies that mitigate climate change impacts on freshwater availability. Using remote sensing, big-data analytics, and machine learning (ANN, SVM), I generate robust insights for water managers and policymakers.</p>
+                <p>International fellowships across Italy, Germany, and Poland have sharpened my agility to address diverse hydro-climatic challenges and reinforced my commitment to translating research into resilient, community-centered water governance.</p>
             </section>
 
-            <section class="section" id="research">
-                <h2>Research Focus</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <span class="badge">Modeling</span>
-                        <h3>Advanced Hydrology</h3>
-                        <p>Process-based simulations for karst and peatland systems; machine learning for drought and flood prediction using satellite data.</p>
+            <section id="research" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Focus Areas</p>
+                    <h2>Research Interests</h2>
+                </div>
+                <div class="pill-list">
+                    <span class="pill">Advanced hydrological modeling</span>
+                    <span class="pill">Machine learning &amp; data-driven models</span>
+                    <span class="pill">Climate change impacts &amp; adaptation</span>
+                    <span class="pill">Remote sensing &amp; big-data analytics</span>
+                    <span class="pill">Water governance &amp; policy engagement</span>
+                </div>
+                <div class="grid two-cols">
+                    <div>
+                        <h3>Process-Based &amp; AI Models</h3>
+                        <ul class="styled-list">
+                            <li>Watershed simulations with SWAT &amp; SWAT-MODFLOW, emphasizing karstic and peatland hydrology.</li>
+                            <li>AI methods (ANN, SVM) fused with satellite data for drought and flood prediction.</li>
+                        </ul>
+                        <h3>Climate Adaptation</h3>
+                        <ul class="styled-list">
+                            <li>Assessing extreme events and their influence on water availability and crop productivity.</li>
+                            <li>Scenario-building to guide adaptive management and risk reduction.</li>
+                        </ul>
                     </div>
-                    <div class="card">
-                        <span class="badge">Climate</span>
-                        <h3>Climate Risk & Adaptation</h3>
-                        <p>Extreme event analysis, future scenario design, and decision support for adaptive risk reduction and crop resilience.</p>
-                    </div>
-                    <div class="card">
-                        <span class="badge">Policy</span>
-                        <h3>Water Governance</h3>
-                        <p>Basin-scale water accounting and socio-economic framing to guide equitable allocation and long-term sustainability.</p>
-                    </div>
-                    <div class="card">
-                        <span class="badge">Remote Sensing</span>
-                        <h3>Earth Observation</h3>
-                        <p>Satellite precipitation, soil moisture, evapotranspiration, and peat displacement monitoring for real-time hydrologic intelligence.</p>
+                    <div>
+                        <h3>Water Management</h3>
+                        <ul class="styled-list">
+                            <li>Basin-scale water accounting and policy frameworks for sustainable allocation.</li>
+                            <li>Socio-economic lenses on rural livelihoods, ecosystem services, and food security.</li>
+                        </ul>
+                        <h3>Remote Sensing &amp; Policy</h3>
+                        <ul class="styled-list">
+                            <li>Satellite precipitation, soil moisture, and evapotranspiration to refine water balance estimates.</li>
+                            <li>Co-designing science-based tools with stakeholders for climate adaptation.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
-            <section class="section" id="education">
-                <h2>Education</h2>
-                <div class="list-clean">
-                    <div class="card">
-                        <h3>PhD, Environmental Engineering (with distinction)</h3>
-                        <p>Warsaw University of Life Sciences – SGGW · 2020–2024</p>
-                        <p><strong>Thesis:</strong> Enhancing the accuracy of process-based and data-driven models for predicting drought.</p>
-                    </div>
-                    <div class="card">
-                        <h3>MSc, Water Resources Engineering</h3>
-                        <p>University of Tehran · 2015–2017</p>
-                        <p><strong>Thesis:</strong> Karstic watershed modeling for precise water balance estimation.</p>
-                    </div>
-                    <div class="card">
-                        <h3>BSc, Water Engineering</h3>
-                        <p>University of Tabriz · 2011–2015</p>
-                    </div>
+            <section id="education" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Academic Path</p>
+                    <h2>Education</h2>
                 </div>
-            </section>
-
-            <section class="section" id="fellowships">
-                <h2>Fellowships & Residencies</h2>
-                <ul class="list-clean">
-                    <li>Research Institute for Geo-Hydrological Protection, IRPI-CNR, Perugia, Italy (2022)</li>
-                    <li>Potsdam Institute for Climate Impact Research (PIK), Potsdam, Germany (2023)</li>
-                    <li>Free University of Berlin (FUB), Germany (2025)</li>
-                    <li>Helmholtz Centre for Environmental Research (UFZ), Leipzig, Germany (2023–2025)</li>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <h3>PhD (with distinction) Environmental Engineering, Mining, and Energy</h3>
+                            <p>Warsaw University of Life Sciences – SGGW (Oct. 2020 - Sep. 2024)</p>
+                            <p class="muted">Thesis: Enhancing the accuracy of process-based and data-driven models for predicting drought.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <h3>M.Sc. Water Resources Engineering</h3>
+                            <p>University of Tehran - College of Aburaihan (Oct. 2015 - Sep. 2017)</p>
+                            <p class="muted">Thesis: Development of comprehensive karstic watershed model to estimate water balance components.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <h3>B.Sc. Water Engineering</h3>
+                            <p>University of Tabriz (Oct. 2011 - Jun. 2015)</p>
+                        </div>
+                    </li>
                 </ul>
             </section>
 
-            <section class="section" id="publications">
-                <h2>Selected Publications</h2>
-                <ol class="publications">
-                    <li>Piniewski, Čerkasova, Plunge, Strauch, <strong>Eini</strong> et al. (2025). Enhanced crop calibration for SWAT+: evaluating water, sediment and nutrient impacts across ten European catchments. <em>Environmental Modelling & Software</em>.</li>
-                    <li>Delavar, Morid, Zaghiyan, <strong>Eini</strong> (2025). Climate change and intensified irrigation as drivers of water imbalance in a large dry basin with two vanishing lakes in Iran. <em>Environment, Development and Sustainability</em>.</li>
-                    <li>Kalaki, Delavar, Farokhnia, Morid, <strong>Eini</strong> (2025). Ensemble multi-model river flow forecasting for the Karkheh Basin. <em>Journal of Hydrology</em>.</li>
-                    <li>Tomczyk, Piniewski, <strong>Eini</strong> (2025). Past and future changes in maximum air temperature and cold days in Poland. <em>Acta Geophysica</em>.</li>
-                    <li>Ghezelayagh, <strong>Eini</strong>, Grygoruk (2025). Assessing carbon accumulation through peat vertical displacement. <em>Science of The Total Environment</em>.</li>
-                    <li>Khaledi-Alamdari, Fakheri-Fard, Majnooni-Heris, <strong>Eini</strong> (2024). Climate controls on rainfed wheat yield in northwest Iran. <em>Journal of Water and Climate Change</em>.</li>
-                    <li>Ghezelayagh, Oleszczuk, Stachowicz, <strong>Eini</strong> et al. (2024). Remote-sensing indicator for peat soil vertical displacement. <em>Ecological Indicators</em>.</li>
-                    <li>Delavar, Raeisi, <strong>Eini</strong> et al. (2024). Evaluating water-saving plans using agrohydrological modeling and accounting. <em>Journal of Irrigation and Drainage Engineering</em>.</li>
-                    <li><strong>Eini</strong> et al. (2023). Detecting drought events with regional and satellite precipitation datasets. <em>Agricultural and Forest Meteorology</em>.</li>
-                    <li><strong>Eini</strong>, Najminejad, Piniewski (2023). Machine learning projections of hydrological drought. <em>Science of The Total Environment</em>.</li>
+            <section id="skills" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Toolbox</p>
+                    <h2>Technical Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill"><h3>Modeling</h3><p>Process-based &amp; data-driven hydrological models</p></div>
+                    <div class="skill"><h3>Computing</h3><p>R, Fortran, Python</p></div>
+                    <div class="skill"><h3>Applications</h3><p>ArcGIS, QGIS</p></div>
+                    <div class="skill"><h3>Scientific Writing</h3><p>Peer-reviewed papers &amp; research projects</p></div>
+                    <div class="skill"><h3>Data</h3><p>Curating, cleaning, and managing complex datasets</p></div>
+                </div>
+            </section>
+
+            <section id="fellowships" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Global Work</p>
+                    <h2>Fellowships</h2>
+                </div>
+                <ul class="styled-list">
+                    <li>Research Institute for Geo-Hydrological Protection, IRPI-CNR Perugia, Italy (Spring/Summer 2022)</li>
+                    <li>Potsdam Institute for Climate Impact Research – PIK, Potsdam, Germany (Spring/Summer 2023)</li>
+                    <li>Free University of Berlin - FUB, Berlin, Germany (Summer 2025)</li>
+                    <li>Helmholtz Centre for Environmental Research – UFZ, Leipzig, Germany (Fall 2023 - Fall 2025)</li>
+                </ul>
+            </section>
+
+            <section id="projects" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Impact in Motion</p>
+                    <h2>Projects</h2>
+                </div>
+                <div class="grid two-cols">
+                    <div>
+                        <h3>Current</h3>
+                        <ul class="styled-list">
+                            <li>NORDBALT-ECOSAFE: Nutrient load reduction within safe ecological boundaries for the Nordic-Baltic region – Horizon Europe <a href="https://cordis.europa.eu/project/id/101060020" target="_blank" rel="noopener">Project link</a></li>
+                            <li>Integrated water management in Lithuania (LIFE22-IPE-LT-LIFE SIP Vanduo) – CINEA <a href="https://webgate.ec.europa.eu/life/publicWebsite/project/LIFE22-IPE-LT-LIFE-SIP-Vanduo-101104645/integrated-water-management-in-lithuania" target="_blank" rel="noopener">Project link</a></li>
+                            <li>Adaptive Water Accounting for Sustainable Management of Central European Transboundary River Basins (AWA)</li>
+                            <li>DryAPS: Hybrid modeling with AI, process-based models, and satellites</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Previous</h3>
+                        <ul class="styled-list">
+                            <li>Integrated modeling of hydrological and agricultural aspects of droughts in the Odra River Basin under a changing climate (2020-2024)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="teaching" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Mentorship</p>
+                    <h2>Teaching Experience</h2>
+                </div>
+                <ul class="styled-list">
+                    <li><strong>Warsaw University of Life Sciences</strong> (2020-present): Climate Change and Water Resources (MSc &amp; BSc in Civil and Environmental Engineering)</li>
+                    <li><strong>Ale-Taha University, Tehran, Iran</strong> (2017-2020): Advanced Engineering Hydrology, Mathematical Models in Hydrology, Groundwater Hydrology, Applied Hydrology (MSc Civil Engineering Water Resources)</li>
+                </ul>
+            </section>
+
+            <section id="publications" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Selected Work</p>
+                    <h2>Publications</h2>
+                </div>
+                <p class="muted">Recent highlights from more than two dozen peer-reviewed papers:</p>
+                <ol class="styled-list" reversed>
+                    <li>Piniewski, M., Čerkasova, N., Strauch, M., Schürz, C., Braun, P., ... &amp; <strong>Eini M. R.</strong> (2025). Enhanced crop calibration for SWAT+: evaluating water, sediment and nutrient impacts across ten European catchments. <em>Environmental Modelling &amp; Software</em>.</li>
+                    <li>Delavar, M., Morid, S., Zaghiyan, M.R. and <strong>Eini M. R.</strong> (2025). Climate change and intensified irrigation as drivers of water imbalance in a large dry basin with two vanishing lakes in Iran. <em>Environment, Development and Sustainability</em>.</li>
+                    <li>Kalaki, M.F., Delavar, M., Farokhnia, A., ... <strong>Eini M. R.</strong> (2025). Ensemble multi-model approach for long-term river flow forecasting in managed basins of the Middle East. <em>Journal of Hydrology</em>.</li>
+                    <li>Tomczyk A. M., Piniewski M., <strong>Eini M. R.</strong>. (2025). Past and future changes in maximum air temperature and cold days in winter in Poland. <em>Acta Geophysica</em>.</li>
+                    <li>Ghezelayagh P., <strong>Eini M. R.</strong>, Grygoruk M. (2025). Assessing carbon accumulation through peat vertical displacement. <em>Science of The Total Environment</em>.</li>
                 </ol>
+                <p class="muted">Full publication list available on Google Scholar.</p>
             </section>
 
-            <section class="section" id="projects">
-                <h2>Projects</h2>
-                <ul class="list-clean">
-                    <li><strong>NORDBALT-ECOSAFE</strong> — Nitrogen and phosphorus load reduction within safe ecological boundaries (EU Horizon Europe).</li>
-                    <li><strong>LIFE SIP Vanduo</strong> — Integrated water management in Lithuania (European Climate, Infrastructure and Environment Agency).</li>
-                    <li><strong>Adaptive Water Accounting (AWA)</strong> — Sustainable management of Central European transboundary river basins.</li>
-                    <li><strong>DryAPS</strong> — Hybrid AI/process/satellite modeling for drought resilience.</li>
-                    <li><strong>Integrated Drought Modeling</strong> — Odra River basin under a changing climate (2020–2024).</li>
-                </ul>
-            </section>
-
-            <section class="section" id="teaching">
-                <h2>Teaching</h2>
-                <ul class="list-clean">
-                    <li><strong>Warsaw University of Life Sciences</strong> — Climate Change and Water Resources (BSc/MSc Civil & Environmental Engineering).</li>
-                    <li><strong>Ale-Taha University, Tehran</strong> — Advanced Engineering Hydrology, Mathematical Models in Hydrology, Groundwater Hydrology, Applied Hydrology (2017–2020).</li>
-                </ul>
-            </section>
-
-            <section class="section" id="skills">
-                <h2>Technical Skills</h2>
-                <div class="skills">
-                    <div>
-                        <div class="skill-label"><span>Process & Data-Driven Modeling</span><span>90%</span></div>
-                        <div class="skill-bar"><span data-percent="90"></span></div>
-                    </div>
-                    <div>
-                        <div class="skill-label"><span>R · Python · Fortran</span><span>70%</span></div>
-                        <div class="skill-bar"><span data-percent="70"></span></div>
-                    </div>
-                    <div>
-                        <div class="skill-label"><span>ArcGIS · QGIS</span><span>85%</span></div>
-                        <div class="skill-bar"><span data-percent="85"></span></div>
-                    </div>
-                    <div>
-                        <div class="skill-label"><span>Scientific Writing & Grant Development</span><span>90%</span></div>
-                        <div class="skill-bar"><span data-percent="90"></span></div>
-                    </div>
-                    <div>
-                        <div class="skill-label"><span>Data Management</span><span>80%</span></div>
-                        <div class="skill-bar"><span data-percent="80"></span></div>
-                    </div>
+            <section id="references" class="card">
+                <div class="card__header">
+                    <p class="eyebrow">Testimonials</p>
+                    <h2>References</h2>
                 </div>
+                <ul class="styled-list">
+                    <li>Maciej Piniewski, Warsaw University of Life Sciences – SGGW</li>
+                    <li>Zbigniew W. Kundzewicz, Polish Academy of Sciences</li>
+                    <li>Akbar Rahmati, Czech University of Life Sciences Prague</li>
+                    <li>Haniyeh Salmani, Universidad de Salamanca</li>
+                </ul>
             </section>
         </main>
     </div>
 
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
     <footer>
-        <p>&copy; 2024 Mohammad Reza Eini · <a href="mailto:mohammad.eini.ut@gmail.com">Contact</a></p>
+        <div class="container footer-content">
+            <p>&copy; 2024 Mohammad Reza Eini</p>
+            <a href="mailto:mohammad.eini.ut@gmail.com">mohammad.eini.ut@gmail.com</a>
+        </div>
     </footer>
 
-    <button id="scrollToTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
 </html>
