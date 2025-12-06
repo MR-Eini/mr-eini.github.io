@@ -51,7 +51,7 @@ header p {
     display: inline-block; /* Inline-block for padding and margin */
     margin-top: 10px; /* Space above the button */
     padding: 10px 20px; /* Comfortable padding */
-    background-color: #1abc9c; /* Vibrant teal color */
+    background: linear-gradient(135deg, #18c29c, #5ce1e6); /* Vibrant teal color */
     color: #fff; /* White text */
     text-decoration: none; /* Remove underline */
     border-radius: 25px; /* Fully rounded corners */
@@ -61,8 +61,8 @@ header p {
 }
 
 .download-cv:hover {
-    background-color: #16a085; /* Darker teal on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+    background: linear-gradient(135deg, #14a984, #3fc7d3); /* Darker teal on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
 }
 
 /* ============================
@@ -412,16 +412,17 @@ main section ul li {
 
 #publications ol li {
     margin: 10px 0; /* Space between publications */
-    padding: 15px; /* Padding inside list items */
-    background-color: #ecf0f1; /* Light gray background */
-    border-left: 5px solid #1abc9c; /* Teal left border for emphasis */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    padding: 18px; /* Padding inside list items */
+    background: rgba(255, 255, 255, 0.85); /* Light gray background */
+    border-left: 6px solid #18c29c; /* Teal left border for emphasis */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 #publications ol li:hover {
-    background-color: #d1f2eb; /* Light teal background on hover */
+    background-color: rgba(209, 242, 235, 0.8); /* Light teal background on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
 /* ============================
@@ -439,20 +440,21 @@ main section ul li {
 #co-authors ul li,
 #projects ul li,
 #teaching ul li {
-    background: #ecf0f1; /* Light gray background */
+    background: rgba(255, 255, 255, 0.9); /* Light gray background */
     margin: 10px 0; /* Space between items */
-    padding: 15px; /* Padding inside items */
-    border-left: 5px solid #1abc9c; /* Teal left border */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    padding: 16px; /* Padding inside items */
+    border-left: 6px solid #18c29c; /* Teal left border */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 #fellowships ul li:hover,
 #co-authors ul li:hover,
 #projects ul li:hover,
 #teaching ul li:hover {
-    background-color: #d1f2eb; /* Light teal on hover */
+    background-color: rgba(209, 242, 235, 0.8); /* Light teal on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
 /* ============================
@@ -468,7 +470,7 @@ main section ul li {
 }
 
 #skills .skill-bar {
-    background: #ddd; /* Light gray background for bars */
+    background: rgba(12, 30, 50, 0.08); /* Light gray background for bars */
     border-radius: 20px; /* Rounded bars */
     overflow: hidden; /* Clip overflowing content */
     height: 25px; /* Fixed height */
@@ -479,7 +481,7 @@ main section ul li {
     display: block;
     height: 100%;
     width: 0; /* Initial width for animation */
-    background-color: #1abc9c; /* Teal color for filled part */
+    background: linear-gradient(135deg, #18c29c, #5ce1e6); /* Teal color for filled part */
     border-radius: 20px; /* Rounded filled part */
     transition: width 2s ease; /* Smooth width transition */
     position: relative; /* For text positioning */
@@ -508,19 +510,20 @@ main section ul li {
     right: 30px; /* Position from right */
     z-index: 1000; /* Above other elements */
     font-size: 1.5em; /* Larger icon */
-    background-color: #1abc9c; /* Teal background */
+    background: linear-gradient(145deg, #18c29c, #5ce1e6); /* Teal background */
     color: #fff; /* White icon */
     border: none; /* Remove borders */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 15px; /* Padding around icon */
     border-radius: 50%; /* Circular button */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 #scrollToTopBtn:hover {
-    background-color: #16a085; /* Darker teal on hover */
+    background: linear-gradient(145deg, #14a984, #3fc7d3); /* Darker teal on hover */
     transform: scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
 /* ============================
