@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hamburger').classList.remove('active');
         });
     });
+}
 
     // Mobile navigation toggle
     const hamburger = document.getElementById('hamburger');
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollToTopBtn.style.display = 'none';
         }
     });
+    scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
 
     scrollToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -96,4 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     animateParticles();
-});
+    window.addEventListener('resize', () => {
+        setCanvasSize();
+        initParticles();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', init);
