@@ -1,13 +1,26 @@
 /* ============================
    General Styling for the Body
    ============================ */
+:root {
+    --deep-navy: #0b1b2b;
+    --midnight: #12273d;
+    --teal: #18c29c;
+    --aqua: #5ce1e6;
+    --sand: #f3f6fb;
+    --ink: #1f2933;
+    --soft-border: rgba(255, 255, 255, 0.35);
+}
+
 body {
     font-family: 'Roboto', sans-serif; /* Clean and modern font */
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.7; /* Improved readability */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    background-color: #f7f7f7; /* Light, neutral background */
-    color: #333; /* Dark gray text for better contrast */
+    background: radial-gradient(circle at 20% 20%, rgba(24, 194, 156, 0.15), transparent 25%),
+        radial-gradient(circle at 80% 10%, rgba(92, 225, 230, 0.15), transparent 22%),
+        radial-gradient(circle at 50% 80%, rgba(24, 194, 156, 0.1), transparent 22%),
+        linear-gradient(135deg, #0f172a 0%, #111827 40%, #0b172b 100%);
+    color: var(--ink); /* Dark text for better contrast */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
 }
 
@@ -15,28 +28,31 @@ body {
    Header Styling
    ============================ */
 header {
-    background-color: #2c3e50; /* Elegant dark blue */
+    background: linear-gradient(135deg, rgba(24, 194, 156, 0.75), rgba(92, 225, 230, 0.8));
     color: #ecf0f1; /* Light text for contrast */
-    padding: 20px 0; /* Increased padding for prominence */
+    padding: 24px 0; /* Increased padding for prominence */
     text-align: center; /* Center-aligned text */
     position: fixed; /* Fixed header */
     width: 100%;
     top: 0;
     z-index: 1000; /* Stay above other elements */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Soft shadow for depth */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--soft-border);
 }
 
 header h1 {
     margin: 0; /* Remove default margin */
-    font-size: 1.8em; /* Larger font size for main title */
+    font-size: 2em; /* Larger font size for main title */
     letter-spacing: 1px; /* Spacing for readability */
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
 }
 
 header p {
-    margin: 5px 0; /* Small margins for subtext */
+    margin: 6px 0; /* Small margins for subtext */
     font-size: 1em; /* Readable font size */
-    color: #bdc3c7; /* Lighter gray for subtext */
+    color: #eaf6ff; /* Lighter gray for subtext */
 }
 
 /* ============================
@@ -46,7 +62,7 @@ header p {
     display: inline-block; /* Inline-block for padding and margin */
     margin-top: 10px; /* Space above the button */
     padding: 10px 20px; /* Comfortable padding */
-    background-color: #1abc9c; /* Vibrant teal color */
+    background: linear-gradient(135deg, #18c29c, #5ce1e6); /* Vibrant teal color */
     color: #fff; /* White text */
     text-decoration: none; /* Remove underline */
     border-radius: 25px; /* Fully rounded corners */
@@ -56,20 +72,26 @@ header p {
 }
 
 .download-cv:hover {
-    background-color: #16a085; /* Darker teal on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+    background: linear-gradient(135deg, #14a984, #3fc7d3); /* Darker teal on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
 }
 
 /* ============================
    Navbar Styling
    ============================ */
 .navbar {
-    background-color: #34495e; /* Modern dark slate color */
+    background: rgba(18, 39, 61, 0.9); /* Modern dark slate color */
     overflow: hidden; /* Clear floats */
     position: sticky; /* Stick to top on scroll */
     top: 60px; /* Offset for fixed header */
     z-index: 999; /* Below header */
     transition: transform 0.3s ease-in-out; /* Smooth hide/show */
+    border: 1px solid var(--soft-border);
+    border-radius: 16px;
+    width: 92%;
+    margin: 0 auto;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .navbar.hidden {
@@ -91,19 +113,20 @@ header p {
 
 .navbar a {
     display: block; /* Full clickable area */
-    color: #ecf0f1; /* Light text color */
-    background-color: #34495e; /* Same as navbar background */
+    color: #e9f6ff; /* Light text color */
+    background: transparent; /* Same as navbar background */
     text-align: center; /* Center text */
     padding: 10px 15px; /* Comfortable padding */
     text-decoration: none; /* Remove underline */
     font-weight: 500; /* Medium weight for readability */
-    border-radius: 5px; /* Slightly rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    border-radius: 12px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
 .navbar a:hover {
-    background-color: #1abc9c; /* Teal background on hover */
+    background: linear-gradient(135deg, rgba(24, 194, 156, 0.8), rgba(92, 225, 230, 0.8)); /* Teal background on hover */
     color: #fff; /* White text on hover */
+    transform: translateY(-1px);
 }
 
 /* ============================
@@ -185,7 +208,7 @@ header p {
     justify-content: center; /* Center columns horizontally */
     align-items: flex-start; /* Align items to the top */
     max-width: 1200px; /* Maximum width */
-    margin: 100px auto 50px auto; /* Center horizontally with top margin for fixed header */
+    margin: 120px auto 60px auto; /* Center horizontally with top margin for fixed header */
     padding: 20px; /* Padding around container */
     gap: 20px; /* Space between columns */
     flex-wrap: wrap; /* Wrap columns on smaller screens */
@@ -197,19 +220,22 @@ header p {
 .left-column {
     flex: 1; /* Flexible width */
     max-width: 250px; /* Maximum width */
-    background-color: #ecf0f1; /* Light background */
+    background: rgba(255, 255, 255, 0.9); /* Light background */
     padding: 20px; /* Padding inside column */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
-    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12); /* Subtle shadow */
+    border-radius: 16px; /* Rounded corners */
     position: sticky; /* Sticky sidebar */
     top: 80px; /* Offset from top */
     height: fit-content; /* Fit to content height */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--soft-border);
 }
 
 .left-column:hover {
-    background-color: #dcdde1; /* Slightly darker on hover */
-    box-shadow: 0 6px 8px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+    background-color: rgba(245, 248, 255, 0.95); /* Slightly darker on hover */
+    box-shadow: 0 18px 45px rgba(0,0,0,0.18); /* Enhanced shadow on hover */
+    transform: translateY(-3px);
 }
 
 .profile-photo {
@@ -257,24 +283,27 @@ header p {
     display: flex; /* Flex layout for icon and text */
     align-items: center; /* Center items vertically */
     margin: 5px 0; /* Vertical spacing between links */
-    color: #2c3e50; /* Dark text color */
-    background-color: #bdc3c7; /* Light gray background */
-    padding: 8px 12px; /* Padding inside links */
-    border-radius: 5px; /* Rounded corners */
+    color: #0f172a; /* Dark text color */
+    background: rgba(255, 255, 255, 0.85); /* Light gray background */
+    padding: 10px 14px; /* Padding inside links */
+    border-radius: 12px; /* Rounded corners */
     text-decoration: none; /* Remove underline */
     width: 100%; /* Full width */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    border: 1px solid var(--soft-border);
 }
 
 .social-links a i {
     margin-right: 10px; /* Space between icon and text */
     font-size: 1.2em; /* Larger icons */
-    color: #1abc9c; /* Teal color for icons */
+    color: #18c29c; /* Teal color for icons */
 }
 
 .social-links a:hover {
-    background-color: #1abc9c; /* Teal background on hover */
+    background: linear-gradient(135deg, rgba(24, 194, 156, 0.85), rgba(92, 225, 230, 0.85)); /* Teal background on hover */
     color: #fff; /* White text on hover */
+    box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
 }
 
 .social-links a:hover i {
@@ -345,26 +374,37 @@ header p {
     max-width: 800px; /* Maximum width for readability */
     width: 100%; /* Full width */
     padding: 20px; /* Padding inside main container */
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
-    border-radius: 10px; /* Rounded corners */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    background: rgba(255, 255, 255, 0.95); /* White background */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.14); /* Subtle shadow */
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    border: 1px solid var(--soft-border);
+    backdrop-filter: blur(10px);
 }
 
 .main-container:hover {
-    background-color: #f0f0f0; /* Light gray on hover */
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+    background-color: rgba(249, 252, 255, 0.98); /* Light gray on hover */
+    box-shadow: 0 24px 60px rgba(0,0,0,0.16); /* Enhanced shadow on hover */
+    transform: translateY(-2px);
 }
 
 main section {
     margin-bottom: 40px; /* Space between sections */
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--soft-border);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.08);
 }
 
 main section h2 {
     font-size: 1.5em; /* Larger font for section titles */
-    color: #2c3e50; /* Dark blue for titles */
+    color: #0f172a; /* Dark blue for titles */
     margin-bottom: 20px; /* Space below titles */
     position: relative; /* For underline */
+    background: linear-gradient(135deg, #18c29c, #5ce1e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 main section h2::after {
@@ -381,8 +421,30 @@ main section h2::after {
 main section p,
 main section ul li {
     font-size: 0.95em; /* Readable font size */
-    color: #555; /* Medium gray for text */
+    color: #2b3642; /* Medium gray for text */
     line-height: 1.6; /* Improved readability */
+}
+
+main section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+main section ul li {
+    position: relative;
+    padding-left: 26px;
+}
+
+main section ul li::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #18c29c, #5ce1e6);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    box-shadow: 0 0 0 4px rgba(24, 194, 156, 0.15);
 }
 
 /* ============================
@@ -395,16 +457,17 @@ main section ul li {
 
 #publications ol li {
     margin: 10px 0; /* Space between publications */
-    padding: 15px; /* Padding inside list items */
-    background-color: #ecf0f1; /* Light gray background */
-    border-left: 5px solid #1abc9c; /* Teal left border for emphasis */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    padding: 18px; /* Padding inside list items */
+    background: rgba(255, 255, 255, 0.85); /* Light gray background */
+    border-left: 6px solid #18c29c; /* Teal left border for emphasis */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 #publications ol li:hover {
-    background-color: #d1f2eb; /* Light teal background on hover */
+    background-color: rgba(209, 242, 235, 0.8); /* Light teal background on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
 /* ============================
@@ -422,20 +485,21 @@ main section ul li {
 #co-authors ul li,
 #projects ul li,
 #teaching ul li {
-    background: #ecf0f1; /* Light gray background */
+    background: rgba(255, 255, 255, 0.9); /* Light gray background */
     margin: 10px 0; /* Space between items */
-    padding: 15px; /* Padding inside items */
-    border-left: 5px solid #1abc9c; /* Teal left border */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    padding: 16px; /* Padding inside items */
+    border-left: 6px solid #18c29c; /* Teal left border */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 #fellowships ul li:hover,
 #co-authors ul li:hover,
 #projects ul li:hover,
 #teaching ul li:hover {
-    background-color: #d1f2eb; /* Light teal on hover */
+    background-color: rgba(209, 242, 235, 0.8); /* Light teal on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
 /* ============================
@@ -451,7 +515,7 @@ main section ul li {
 }
 
 #skills .skill-bar {
-    background: #ddd; /* Light gray background for bars */
+    background: rgba(12, 30, 50, 0.08); /* Light gray background for bars */
     border-radius: 20px; /* Rounded bars */
     overflow: hidden; /* Clip overflowing content */
     height: 25px; /* Fixed height */
@@ -462,7 +526,7 @@ main section ul li {
     display: block;
     height: 100%;
     width: 0; /* Initial width for animation */
-    background-color: #1abc9c; /* Teal color for filled part */
+    background: linear-gradient(135deg, #18c29c, #5ce1e6); /* Teal color for filled part */
     border-radius: 20px; /* Rounded filled part */
     transition: width 2s ease; /* Smooth width transition */
     position: relative; /* For text positioning */
@@ -491,19 +555,20 @@ main section ul li {
     right: 30px; /* Position from right */
     z-index: 1000; /* Above other elements */
     font-size: 1.5em; /* Larger icon */
-    background-color: #1abc9c; /* Teal background */
+    background: linear-gradient(145deg, #18c29c, #5ce1e6); /* Teal background */
     color: #fff; /* White icon */
     border: none; /* Remove borders */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 15px; /* Padding around icon */
     border-radius: 50%; /* Circular button */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 #scrollToTopBtn:hover {
-    background-color: #16a085; /* Darker teal on hover */
+    background: linear-gradient(145deg, #14a984, #3fc7d3); /* Darker teal on hover */
     transform: scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
 /* ============================
