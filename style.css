@@ -127,9 +127,15 @@ canvas#backgroundCanvas {
     color: var(--muted);
 }
 
-.portrait-card {
-    max-width: 240px;
-    margin: 0 auto;
+.portrait-card { 
+    position: relative; 
+    background: var(--card); 
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 14px; 
+    box-shadow: var(--shadow); 
+    backdrop-filter: blur(12px); 
+    text-align: center; 
 }
 
 .portrait-card img {
