@@ -138,11 +138,10 @@ canvas#backgroundCanvas {
     text-align: center; 
 }
 
-.portrait-card img {
-    width: 200px;      /* set exact size */
-    height: auto;      /* keep proportions */
-    border-radius: 12px;
-    object-fit: cover;
+.portrait-card img { 
+    width: 100%; 
+    border-radius: 12px; 
+    object-fit: cover; 
 }
 
 .portrait-card .badge {
