@@ -332,3 +332,10 @@ footer {
     .hamburger { display: flex; }
     .layout { margin-top: 16px; }
 }
+.publications-list li {
+  margin-bottom: 14px;
+}
+
+.publications-list em {
+  color: var(--accent);
+}
